@@ -19,11 +19,6 @@ import { motion } from 'framer-motion';
 import { useRouter } from 'next/navigation';
 import React from 'react';
 
-const companyLinks = [
-  { href: '/about', label: 'About Us' },
-  { href: '/team', label: 'Our Team' },
-];
-
 const serviceLinks = [
     { href: '/medical-coding', label: 'Medical Coding' },
     { href: '/web-development', label: 'Web Development' },
@@ -53,6 +48,7 @@ const industryLinks = [
 const navLinks = [
   { href: '/our-sourcing', label: 'Outsourcing' },
   { href: '/careers', label: 'Careers' },
+  { href: '/about', label: 'About Us' },
 ];
 
 export default function Header() {
@@ -90,19 +86,6 @@ export default function Header() {
         </div>
         
         <nav className="hidden gap-6 md:flex items-center ml-auto">
-          <DropdownMenu>
-            <DropdownMenuTrigger className="flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80 focus:outline-none">
-              Company
-              <ChevronDown className="ml-1 h-4 w-4" />
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {companyLinks.map((link) => (
-                  <DropdownMenuItem key={link.href} asChild>
-                  <Link href={link.href}>{link.label}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
 
           <DropdownMenu>
             <DropdownMenuTrigger className="flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80 focus:outline-none">
@@ -180,17 +163,6 @@ export default function Header() {
                 <Link href="/" onClick={() => handleLinkClick('/')} className="flex items-center gap-2 text-lg font-semibold mb-4">
                     <Logo className="h-8 w-auto" />
                 </Link>
-                <div className="text-muted-foreground">Company</div>
-                {companyLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    onClick={(e) => { e.preventDefault(); handleLinkClick(link.href); }}
-                    className="text-muted-foreground transition-colors hover:text-primary pl-4"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
                 <div className="text-muted-foreground">Services</div>
                  <Link href="/cyber-security" onClick={(e) => { e.preventDefault(); handleLinkClick('/cyber-security'); }} className="text-muted-foreground transition-colors hover:text-primary pl-4">Cyber Security</Link>
                 {serviceLinks.map((link) => (
