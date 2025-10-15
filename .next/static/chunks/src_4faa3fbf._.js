@@ -744,16 +744,6 @@ var _s = __turbopack_context__.k.signature();
 ;
 ;
 ;
-const companyLinks = [
-    {
-        href: '/about',
-        label: 'About Us'
-    },
-    {
-        href: '/team',
-        label: 'Our Team'
-    }
-];
 const serviceLinks = [
     {
         href: '/medical-coding',
@@ -836,6 +826,10 @@ const navLinks = [
     {
         href: '/careers',
         label: 'Careers'
+    },
+    {
+        href: '/about',
+        label: 'About Us'
     }
 ];
 function Header() {
@@ -877,17 +871,17 @@ function Header() {
                             className: "h-8 w-auto"
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 88,
+                            lineNumber: 84,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/layout/header.tsx",
-                        lineNumber: 87,
+                        lineNumber: 83,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 86,
+                    lineNumber: 82,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("nav", {
@@ -898,64 +892,18 @@ function Header() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuTrigger"], {
                                     className: "flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80 focus:outline-none",
                                     children: [
-                                        "Company",
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
-                                            className: "ml-1 h-4 w-4"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 96,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 94,
-                                    columnNumber: 13
-                                }, this),
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
-                                    children: companyLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
-                                            asChild: true,
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: link.href,
-                                                children: link.label
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 101,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, link.href, false, {
-                                            fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 100,
-                                            columnNumber: 19
-                                        }, this))
-                                }, void 0, false, {
-                                    fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 98,
-                                    columnNumber: 13
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 93,
-                            columnNumber: 11
-                        }, this),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenu"], {
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuTrigger"], {
-                                    className: "flex items-center text-sm font-medium text-foreground/60 transition-colors hover:text-foreground/80 focus:outline-none",
-                                    children: [
                                         "Services",
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$down$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronDown$3e$__["ChevronDown"], {
                                             className: "ml-1 h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 110,
+                                            lineNumber: 93,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 91,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -973,12 +921,12 @@ function Header() {
                                                         children: "Cyber Security"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 115,
+                                                        lineNumber: 98,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 114,
+                                                    lineNumber: 97,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuPortal"], {
@@ -994,28 +942,28 @@ function Header() {
                                                                     children: link.label
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                                    lineNumber: 121,
+                                                                    lineNumber: 104,
                                                                     columnNumber: 37
                                                                 }, this)
                                                             }, link.label, false, {
                                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                                lineNumber: 120,
+                                                                lineNumber: 103,
                                                                 columnNumber: 33
                                                             }, this))
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/layout/header.tsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 101,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 100,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 113,
+                                            lineNumber: 96,
                                             columnNumber: 17
                                         }, this),
                                         serviceLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuItem"], {
@@ -1025,24 +973,24 @@ function Header() {
                                                     children: link.label
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 129,
+                                                    lineNumber: 112,
                                                     columnNumber: 19
                                                 }, this)
                                             }, link.label, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 128,
+                                                lineNumber: 111,
                                                 columnNumber: 17
                                             }, this))
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 112,
+                                    lineNumber: 95,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 107,
+                            lineNumber: 90,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenu"], {
@@ -1055,13 +1003,13 @@ function Header() {
                                             className: "ml-1 h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 138,
+                                            lineNumber: 121,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 119,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$dropdown$2d$menu$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["DropdownMenuContent"], {
@@ -1072,23 +1020,23 @@ function Header() {
                                                 children: link.label
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 143,
+                                                lineNumber: 126,
                                                 columnNumber: 21
                                             }, this)
                                         }, link.label, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 142,
+                                            lineNumber: 125,
                                             columnNumber: 21
                                         }, this))
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 140,
+                                    lineNumber: 123,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 135,
+                            lineNumber: 118,
                             columnNumber: 11
                         }, this),
                         navLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1097,13 +1045,13 @@ function Header() {
                                 children: link.label
                             }, `${link.label}-${link.href}`, false, {
                                 fileName: "[project]/src/components/layout/header.tsx",
-                                lineNumber: 150,
+                                lineNumber: 133,
                                 columnNumber: 13
                             }, this))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 92,
+                    lineNumber: 88,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1132,23 +1080,23 @@ function Header() {
                                             className: "ml-2 h-4 w-4"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/layout/header.tsx",
-                                            lineNumber: 167,
+                                            lineNumber: 150,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 163,
+                                        lineNumber: 146,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/components/layout/header.tsx",
-                                lineNumber: 161,
+                                lineNumber: 144,
                                 columnNumber: 13
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 160,
+                            lineNumber: 143,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Sheet"], {
@@ -1166,7 +1114,7 @@ function Header() {
                                                 className: "h-5 w-5"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 174,
+                                                lineNumber: 157,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1174,18 +1122,18 @@ function Header() {
                                                 children: "Toggle Menu"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 175,
+                                                lineNumber: 158,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 173,
+                                        lineNumber: 156,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 172,
+                                    lineNumber: 155,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$ui$2f$sheet$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["SheetContent"], {
@@ -1201,41 +1149,20 @@ function Header() {
                                                     className: "h-8 w-auto"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 181,
+                                                    lineNumber: 164,
                                                     columnNumber: 21
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 180,
+                                                lineNumber: 163,
                                                 columnNumber: 17
                                             }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "text-muted-foreground",
-                                                children: "Company"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 183,
-                                                columnNumber: 17
-                                            }, this),
-                                            companyLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                    href: link.href,
-                                                    onClick: (e)=>{
-                                                        e.preventDefault();
-                                                        handleLinkClick(link.href);
-                                                    },
-                                                    className: "text-muted-foreground transition-colors hover:text-primary pl-4",
-                                                    children: link.label
-                                                }, link.href, false, {
-                                                    fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 185,
-                                                    columnNumber: 19
-                                                }, this)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                 className: "text-muted-foreground",
                                                 children: "Services"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 194,
+                                                lineNumber: 166,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1248,7 +1175,7 @@ function Header() {
                                                 children: "Cyber Security"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 195,
+                                                lineNumber: 167,
                                                 columnNumber: 18
                                             }, this),
                                             serviceLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1261,7 +1188,7 @@ function Header() {
                                                     children: link.label
                                                 }, link.label, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 197,
+                                                    lineNumber: 169,
                                                     columnNumber: 19
                                                 }, this)),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1269,7 +1196,7 @@ function Header() {
                                                 children: "Industries"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/layout/header.tsx",
-                                                lineNumber: 206,
+                                                lineNumber: 178,
                                                 columnNumber: 17
                                             }, this),
                                             industryLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1282,7 +1209,7 @@ function Header() {
                                                     children: link.label
                                                 }, link.label, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 208,
+                                                    lineNumber: 180,
                                                     columnNumber: 21
                                                 }, this)),
                                             navLinks.map((link)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
@@ -1295,41 +1222,41 @@ function Header() {
                                                     children: link.label
                                                 }, `${link.label}-${link.href}`, false, {
                                                     fileName: "[project]/src/components/layout/header.tsx",
-                                                    lineNumber: 218,
+                                                    lineNumber: 190,
                                                     columnNumber: 19
                                                 }, this))
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/layout/header.tsx",
-                                        lineNumber: 179,
+                                        lineNumber: 162,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/layout/header.tsx",
-                                    lineNumber: 178,
+                                    lineNumber: 161,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/layout/header.tsx",
-                            lineNumber: 171,
+                            lineNumber: 154,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/layout/header.tsx",
-                    lineNumber: 159,
+                    lineNumber: 142,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/src/components/layout/header.tsx",
-            lineNumber: 85,
+            lineNumber: 81,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/src/components/layout/header.tsx",
-        lineNumber: 84,
+        lineNumber: 80,
         columnNumber: 5
     }, this);
 }
@@ -1459,7 +1386,7 @@ if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelper
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-__turbopack_context__.v(JSON.parse("{\"placeholderImages\":[{\"id\":\"hero-globe\",\"description\":\"A glowing digital globe with network lines\",\"imageUrl\":\"/assets/images/image.png\",\"imageHint\":\"cyber security\"},{\"id\":\"threat-map\",\"description\":\"A world map showing digital threats\",\"imageUrl\":\"/assets/images/map.png\",\"imageHint\":\"threat map\"},{\"id\":\"about-us-team\",\"description\":\"A modern office with people collaborating\",\"imageUrl\":\"/assets/images/mordenoffice.png\",\"imageHint\":\"security team\"},{\"id\":\"cloud-native-journey\",\"description\":\"A digital shield graphic representing cybersecurity and cloud native technology\",\"imageUrl\":\"/assets/images/cloudnative.png\",\"imageHint\":\"cybersecurity\"},{\"id\":\"zelar-logo\",\"description\":\"Primary Vision company logo\",\"imageUrl\":\"https://picsum.photos/seed/logo1/200/50\",\"imageHint\":\"abstract logo\"},{\"id\":\"iso-logo\",\"description\":\"ISO 27001 certified logo\",\"imageUrl\":\"/assets/images/iso.png\",\"imageHint\":\"certification\"},{\"id\":\"award-logo-1\",\"description\":\"Partner award logo 1\",\"imageUrl\":\"https://picsum.photos/seed/award1/150/100\",\"imageHint\":\"award\"},{\"id\":\"award-logo-2\",\"description\":\"Partner award logo 2\",\"imageUrl\":\"https://picsum.photos/seed/award2/150/100\",\"imageHint\":\"partner\"},{\"id\":\"team-collaboration\",\"description\":\"Two people collaborating on a computer\",\"imageUrl\":\"https://d3njjcbhbojbot.cloudfront.net/api/utilities/v1/imageproxy/https://images.ctfassets.net/wp1lcwdav1p1/4taC8fhePPvNtNGgekhw6y/bf9e494a160f8d97e7c7645825224ab1/GettyImages-2050780380.jpg?w=1500&h=680&q=60&fit=fill&f=faces&fm=jpg&fl=progressive&auto=format%2Ccompress&dpr=1&w=1000\",\"imageHint\":\"team collaboration\"},{\"id\":\"about-us-intro\",\"description\":\"A lightbulb representing ideas and people\",\"imageUrl\":\"https://rjlinkindia.com/wp-content/uploads/2023/09/about-us1.png\",\"imageHint\":\"about us\"},{\"id\":\"vision-mission-intro\",\"description\":\"A person flying on a rocket with gears, representing vision and strategy\",\"imageUrl\":\"https://banner2.cleanpng.com/20180622/vbo/kisspng-business-organization-engineering-india-industry-mission-vision-5b2d99958eeb41.6670814415297150935854.jpg\",\"imageHint\":\"vision mission\"},{\"id\":\"our-products-intro\",\"description\":\"A rocket launching, representing products\",\"imageUrl\":\"https://cbx-prod.b-cdn.net/COLOURBOX38946493.jpg?width=800&height=800&quality=70\",\"imageHint\":\"our products\"},{\"id\":\"team-hero-illustration\",\"description\":\"Illustration of a team collaborating at a table\",\"imageUrl\":\"https://picsum.photos/seed/our-team/400/300\",\"imageHint\":\"our team\"},{\"id\":\"careers-hero-illustration\",\"description\":\"Illustration of people collaborating in an office\",\"imageUrl\":\"https://picsum.photos/seed/careers-hero/500/400\",\"imageHint\":\"office collaboration\"},{\"id\":\"careers-info-illustration\",\"description\":\"Illustration representing career growth and opportunity\",\"imageUrl\":\"https://picsum.photos/seed/careers-info/500/500\",\"imageHint\":\"career growth\"},{\"id\":\"vasu-maganti\",\"description\":\"Photo of Vasu Maganti\",\"imageUrl\":\"https://picsum.photos/seed/vasu/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"chakradhar-rao\",\"description\":\"Photo of Chakradhar Rao\",\"imageUrl\":\"https://picsum.photos/seed/chakri/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"joshua-hurst\",\"description\":\"Photo of Joshua Hurst\",\"imageUrl\":\"https://picsum.photos/seed/joshua/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"venkat-rs\",\"description\":\"Photo of Venkat R S\",\"imageUrl\":\"https://picsum.photos/seed/venkat/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"srini-maganti\",\"description\":\"Photo of Srini Maganti\",\"imageUrl\":\"https://picsum.photos/seed/srini/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"mohammad-sikandar\",\"description\":\"Photo of Mohammad Sikandar\",\"imageUrl\":\"https://picsum.photos/seed/mohammad/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"anand-panimaya\",\"description\":\"Photo of Anand Panimaya\",\"imageUrl\":\"https://picsum.photos/seed/anand/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"zaman-kazi\",\"description\":\"Photo of Zaman Kazi\",\"imageUrl\":\"https://picsum.photos/seed/zaman/400/400\",\"imageHint\":\"male portrait\"},{\"id\":\"about-hero-image\",\"description\":\"About Us button\",\"imageUrl\":\"https://static.vecteezy.com/system/resources/previews/007/931/696/non_2x/about-us-button-about-us-text-template-for-website-about-us-icon-flat-style-vector.jpg\",\"imageHint\":\"about us\"},{\"id\":\"sourcing-main-image\",\"description\":\"A person touching a holographic screen with a world map\",\"imageUrl\":\"https://picsum.photos/seed/sourcing/500/400\",\"imageHint\":\"outsourcing world\"},{\"id\":\"medical-coding-1\",\"description\":\"Doctor discussing with a young patient and her mother\",\"imageUrl\":\"https://picsum.photos/seed/medcode1/600/400\",\"imageHint\":\"doctor patient\"},{\"id\":\"medical-coding-2\",\"description\":\"Two female doctors working at a computer\",\"imageUrl\":\"https://picsum.photos/seed/medcode2/600/400\",\"imageHint\":\"doctors computer\"},{\"id\":\"web-dev-1\",\"description\":\"A developer working on a laptop with code icons overlayed\",\"imageUrl\":\"https://picsum.photos/seed/webdev1/600/400\",\"imageHint\":\"developer laptop\"},{\"id\":\"web-dev-2\",\"description\":\"A developer holding a tablet with code icons overlayed\",\"imageUrl\":\"https://picsum.photos/seed/webdev2/600/400\",\"imageHint\":\"developer tablet\"},{\"id\":\"app-dev-1\",\"description\":\"A developer working on a laptop with mobile UI overlays\",\"imageUrl\":\"https://picsum.photos/seed/appdev1/600/400\",\"imageHint\":\"app developer\"},{\"id\":\"app-dev-2\",\"description\":\"A person using a tablet with app icons floating around\",\"imageUrl\":\"https://picsum.photos/seed/appdev2/600/400\",\"imageHint\":\"app usage\"},{\"id\":\"cloud-computing-1\",\"description\":\"Isometric illustration of cloud computing services and devices\",\"imageUrl\":\"https://picsum.photos/seed/cloud1/600/400\",\"imageHint\":\"cloud services\"},{\"id\":\"cloud-computing-2\",\"description\":\"Isometric illustration of cloud infrastructure and a laptop\",\"imageUrl\":\"https://picsum.photos/seed/cloud2/600/400\",\"imageHint\":\"cloud infrastructure\"},{\"id\":\"qa-testing-1\",\"description\":\"Illustration of people testing an application with a magnifying glass\",\"imageUrl\":\"https://picsum.photos/seed/qatesting1/600/400\",\"imageHint\":\"qa testing\"},{\"id\":\"qa-testing-2\",\"description\":\"Illustration of people looking at charts and graphs for performance testing\",\"imageUrl\":\"https://picsum.photos/seed/qatesting2/600/400\",\"imageHint\":\"performance testing\"},{\"id\":\"data-analytics-1\",\"description\":\"A team analyzing charts on a laptop\",\"imageUrl\":\"https://picsum.photos/seed/dataanalytics1/600/400\",\"imageHint\":\"data analysis\"},{\"id\":\"data-analytics-2\",\"description\":\"A team discussing charts on a large screen\",\"imageUrl\":\"https://picsum.photos/seed/dataanalytics2/600/400\",\"imageHint\":\"data reporting\"},{\"id\":\"ux-ui-1\",\"description\":\"A designer sketching wireframes on a whiteboard\",\"imageUrl\":\"https://picsum.photos/seed/uxui1/600/400\",\"imageHint\":\"ux design\"},{\"id\":\"ux-ui-2\",\"description\":\"A user interacting with a mobile app prototype\",\"imageUrl\":\"https://picsum.photos/seed/uxui2/600/400\",\"imageHint\":\"ui design\"},{\"id\":\"sas-services-1\",\"description\":\"A scientist looking at clinical data on a computer screen\",\"imageUrl\":\"https://picsum.photos/seed/sas1/600/400\",\"imageHint\":\"clinical data\"},{\"id\":\"sas-services-2\",\"description\":\"A team of statisticians collaborating around a table with charts\",\"imageUrl\":\"https://picsum.photos/seed/sas2/600/400\",\"imageHint\":\"statistical analysis\"},{\"id\":\"cyber-security-hero-2\",\"description\":\"A digital shield protecting a network of devices\",\"imageUrl\":\"https://picsum.photos/seed/cyberhero2/500/400\",\"imageHint\":\"network security\"},{\"id\":\"cyber-security-bundles\",\"description\":\"Illustration showing different cybersecurity service bundles\",\"imageUrl\":\"https://picsum.photos/seed/cyberbundles/500/400\",\"imageHint\":\"security packages\"},{\"id\":\"advanced-phishing-protection\",\"description\":\"Illustration for advanced phishing and BEC protection\",\"imageUrl\":\"https://picsum.photos/seed/phishing/500/400\",\"imageHint\":\"phishing protection\"},{\"id\":\"ai-threat-prioritization-dashboard\",\"description\":\"Illustration for AI Threat Prioritization Dashboard\",\"imageUrl\":\"https://picsum.photos/seed/threatdashboard/500/400\",\"imageHint\":\"ai dashboard\"},{\"id\":\"phishing-protection-video\",\"description\":\"Thumbnail for advanced phishing protection video\",\"imageUrl\":\"https://picsum.photos/seed/phishtitanvideo/600/400\",\"imageHint\":\"phishing video\"},{\"id\":\"msp-success-story\",\"description\":\"Thumbnail for MSP success story video\",\"imageUrl\":\"https://picsum.photos/seed/mspstory/600/400\",\"imageHint\":\"team success\"},{\"id\":\"phishing-analysis-dashboard\",\"description\":\"Dashboard on a tablet showing analysis reports\",\"imageUrl\":\"https://picsum.photos/seed/analysis-dashboard/500/400\",\"imageHint\":\"analysis dashboard\"},{\"id\":\"auto-remediation-dashboard\",\"description\":\"Dashboard showing auto-remediation statistics\",\"imageUrl\":\"https://picsum.photos/seed/autoremediate/500/400\",\"imageHint\":\"remediation dashboard\"},{\"id\":\"url-rewriting-dashboard\",\"description\":\"Dashboard showing URL rewriting statistics\",\"imageUrl\":\"https://picsum.photos/seed/urlrewrite/500/400\",\"imageHint\":\"url rewriting\"},{\"id\":\"advanced-m365-security-dashboard\",\"description\":\"Dashboard showing advanced M365 security metrics\",\"imageUrl\":\"https://picsum.photos/seed/m365security/500/400\",\"imageHint\":\"m365 security\"},{\"id\":\"bec-protection-dashboard\",\"description\":\"Dashboard showing business email compromise protection statistics\",\"imageUrl\":\"https://picsum.photos/seed/becprotection/500/400\",\"imageHint\":\"bec protection\"},{\"id\":\"eutelsat-logo\",\"description\":\"Eutelsat logo\",\"imageUrl\":\"https://picsum.photos/seed/eutelsat/150/50\",\"imageHint\":\"eutelsat logo\"},{\"id\":\"medicus-it-logo\",\"description\":\"Medicus IT logo\",\"imageUrl\":\"https://picsum.photos/seed/medicus/150/50\",\"imageHint\":\"medicus logo\"},{\"id\":\"nostra-logo\",\"description\":\"Nostra logo\",\"imageUrl\":\"https://picsum.photos/seed/nostra/150/50\",\"imageHint\":\"nostra logo\"},{\"id\":\"health-care-analytics\",\"description\":\"Doctors looking at analytics on a laptop\",\"imageUrl\":\"https://picsum.photos/seed/healthcareanalytics/600/400\",\"imageHint\":\"doctors analytics\"},{\"id\":\"manufacturing-workers\",\"description\":\"Two factory workers in safety gear observing a robotic welding arm in action.\",\"imageUrl\":\"https://picsum.photos/seed/manufacturing1/600/400\",\"imageHint\":\"factory workers\"},{\"id\":\"finance-banking-analytics\",\"description\":\"Financial professionals analyzing charts on a large screen\",\"imageUrl\":\"https://picsum.photos/seed/financebanking/600/400\",\"imageHint\":\"finance analytics\"},{\"id\":\"automotive-process\",\"description\":\"A female customer talking to a male mechanic holding a clipboard in a car garage\",\"imageUrl\":\"https://picsum.photos/seed/automotive1/600/400\",\"imageHint\":\"mechanic customer\"},{\"id\":\"media-advertising-megaphone\",\"description\":\"Illustration of a person with a megaphone surrounded by media icons\",\"imageUrl\":\"https://picsum.photos/seed/mediaad/600/400\",\"imageHint\":\"media advertising\"}]}"));}}),
+__turbopack_context__.v(JSON.parse("{\"placeholderImages\":[{\"id\":\"hero-globe\",\"description\":\"A glowing digital globe with network lines\",\"imageUrl\":\"/assets/images/image.png\",\"imageHint\":\"cyber security\"},{\"id\":\"threat-map\",\"description\":\"A world map showing digital threats\",\"imageUrl\":\"/assets/images/map.png\",\"imageHint\":\"threat map\"},{\"id\":\"about-us-team\",\"description\":\"A modern office with people collaborating\",\"imageUrl\":\"/assets/images/mordenoffice.png\",\"imageHint\":\"security team\"},{\"id\":\"cloud-native-journey\",\"description\":\"A digital shield graphic representing cybersecurity and cloud native technology\",\"imageUrl\":\"/assets/images/cloudnative.png\",\"imageHint\":\"cybersecurity\"},{\"id\":\"zelar-logo\",\"description\":\"Primary Vision company logo\",\"imageUrl\":\"https://picsum.photos/seed/logo1/200/50\",\"imageHint\":\"abstract logo\"},{\"id\":\"iso-logo\",\"description\":\"ISO 27001 certified logo\",\"imageUrl\":\"/assets/images/iso.png\",\"imageHint\":\"certification\"},{\"id\":\"award-logo-1\",\"description\":\"Partner award logo 1\",\"imageUrl\":\"/assets/images/award.jpg\",\"imageHint\":\"award\"},{\"id\":\"award-logo-2\",\"description\":\"Partner award logo 2\",\"imageUrl\":\"/assets/images/partner.jpg\",\"imageHint\":\"partner\"},{\"id\":\"team-collaboration\",\"description\":\"Two people collaborating on a computer\",\"imageUrl\":\"/assets/images/teamcollab.png\",\"imageHint\":\"team collaboration\"},{\"id\":\"about-us-intro\",\"description\":\"A lightbulb representing ideas and people\",\"imageUrl\":\"/assets/images/aboutus.jpg\",\"imageHint\":\"about us\"},{\"id\":\"vision-mission-intro\",\"description\":\"A person flying on a rocket with gears, representing vision and strategy\",\"imageUrl\":\"/assets/images/visionmission.jpg\",\"imageHint\":\"vision mission\"},{\"id\":\"our-products-intro\",\"description\":\"A rocket launching, representing products\",\"imageUrl\":\"/assets/images/ourproducts.jpg\",\"imageHint\":\"our products\"},{\"id\":\"team-hero-illustration\",\"description\":\"Illustration of a team collaborating at a table\",\"imageUrl\":\"/assets/images/ourteam.jpg\",\"imageHint\":\"our team\"},{\"id\":\"careers-hero-illustration\",\"description\":\"Illustration of people collaborating in an office\",\"imageUrl\":\"/assets/images/officecollab.jpg\",\"imageHint\":\"office collaboration\"},{\"id\":\"careers-info-illustration\",\"description\":\"Illustration representing career growth and opportunity\",\"imageUrl\":\"/assets/images/carrergrowth.jpg\",\"imageHint\":\"career growth\"},{\"id\":\"vasu-maganti\",\"description\":\"Photo of Vasu Maganti\",\"imageUrl\":\"/assets/images/maleportrait.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"chakradhar-rao\",\"description\":\"Photo of Chakradhar Rao\",\"imageUrl\":\"/assets/images/maleportrait2.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"joshua-hurst\",\"description\":\"Photo of Joshua Hurst\",\"imageUrl\":\"/assets/images/maleportrait3.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"venkat-rs\",\"description\":\"Photo of Venkat R S\",\"imageUrl\":\"/assets/images/maleportrait4.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"srini-maganti\",\"description\":\"Photo of Srini Maganti\",\"imageUrl\":\"/assets/images/maleportrait5.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"mohammad-sikandar\",\"description\":\"Photo of Mohammad Sikandar\",\"imageUrl\":\"/assets/images/maleportrait6.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"anand-panimaya\",\"description\":\"Photo of Anand Panimaya\",\"imageUrl\":\"/assets/images/maleportrait7.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"zaman-kazi\",\"description\":\"Photo of Zaman Kazi\",\"imageUrl\":\"/assets/images/maleportrait8.jpg\",\"imageHint\":\"male portrait\"},{\"id\":\"about-hero-image\",\"description\":\"About Us button\",\"imageUrl\":\"/assets/images/aboutus2.jpg\",\"imageHint\":\"about us\"},{\"id\":\"sourcing-main-image\",\"description\":\"A person touching a holographic screen with a world map\",\"imageUrl\":\"/assets/images/outsourcingworld.jpg\",\"imageHint\":\"outsourcing world\"},{\"id\":\"medical-coding-1\",\"description\":\"Doctor discussing with a young patient and her mother\",\"imageUrl\":\"/assets/images/doctorpatient.jpg\",\"imageHint\":\"doctor patient\"},{\"id\":\"medical-coding-2\",\"description\":\"Two female doctors working at a computer\",\"imageUrl\":\"/assets/images/doctorcomputer.jpg\",\"imageHint\":\"doctors computer\"},{\"id\":\"web-dev-1\",\"description\":\"A developer working on a laptop with code icons overlayed\",\"imageUrl\":\"/assets/images/developerlaptop.jpg\",\"imageHint\":\"developer laptop\"},{\"id\":\"web-dev-2\",\"description\":\"A developer holding a tablet with code icons overlayed\",\"imageUrl\":\"/assets/images/developertablet.jpg\",\"imageHint\":\"developer tablet\"},{\"id\":\"app-dev-1\",\"description\":\"A developer working on a laptop with mobile UI overlays\",\"imageUrl\":\"/assets/images/appdeveloper.jpg\",\"imageHint\":\"app developer\"},{\"id\":\"app-dev-2\",\"description\":\"A person using a tablet with app icons floating around\",\"imageUrl\":\"/assets/images/appusage.jpg\",\"imageHint\":\"app usage\"},{\"id\":\"cloud-computing-1\",\"description\":\"Isometric illustration of cloud computing services and devices\",\"imageUrl\":\"/assets/images/cloudservice.jpg\",\"imageHint\":\"cloud services\"},{\"id\":\"cloud-computing-2\",\"description\":\"Isometric illustration of cloud infrastructure and a laptop\",\"imageUrl\":\"/assets/images/cloudinfrastructure.jpg\",\"imageHint\":\"cloud infrastructure\"},{\"id\":\"qa-testing-1\",\"description\":\"Illustration of people testing an application with a magnifying glass\",\"imageUrl\":\"/assets/images/qatesting.jpg\",\"imageHint\":\"qa testing\"},{\"id\":\"qa-testing-2\",\"description\":\"Illustration of people looking at charts and graphs for performance testing\",\"imageUrl\":\"/assets/images/performancetesting.png\",\"imageHint\":\"performance testing\"},{\"id\":\"data-analytics-1\",\"description\":\"A team analyzing charts on a laptop\",\"imageUrl\":\"/assets/images/dataanalysis.png\",\"imageHint\":\"data analysis\"},{\"id\":\"data-analytics-2\",\"description\":\"A team discussing charts on a large screen\",\"imageUrl\":\"/assets/images/datareporting.png\",\"imageHint\":\"data reporting\"},{\"id\":\"ux-ui-1\",\"description\":\"A designer sketching wireframes on a whiteboard\",\"imageUrl\":\"/assets/images/uxdesign.png\",\"imageHint\":\"ux design\"},{\"id\":\"ux-ui-2\",\"description\":\"A user interacting with a mobile app prototype\",\"imageUrl\":\"/assets/images/uidesign.png\",\"imageHint\":\"ui design\"},{\"id\":\"sas-services-1\",\"description\":\"A scientist looking at clinical data on a computer screen\",\"imageUrl\":\"/assets/images/clinicaldata.png\",\"imageHint\":\"clinical data\"},{\"id\":\"sas-services-2\",\"description\":\"A team of statisticians collaborating around a table with charts\",\"imageUrl\":\"/assets/images/statisticalanalysis.png\",\"imageHint\":\"statistical analysis\"},{\"id\":\"cyber-security-hero-2\",\"description\":\"A digital shield protecting a network of devices\",\"imageUrl\":\"/assets/images/networksecurity.png\",\"imageHint\":\"network security\"},{\"id\":\"cyber-security-bundles\",\"description\":\"Illustration showing different cybersecurity service bundles\",\"imageUrl\":\"/assets/images/securitypackages.png\",\"imageHint\":\"security packages\"},{\"id\":\"advanced-phishing-protection\",\"description\":\"Illustration for advanced phishing and BEC protection\",\"imageUrl\":\"/assets/images/phishingprotection.png\",\"imageHint\":\"phishing protection\"},{\"id\":\"ai-threat-prioritization-dashboard\",\"description\":\"Illustration for AI Threat Prioritization Dashboard\",\"imageUrl\":\"/assets/images/aidashboard.png\",\"imageHint\":\"ai dashboard\"},{\"id\":\"phishing-protection-video\",\"description\":\"Thumbnail for advanced phishing protection video\",\"imageUrl\":\"/assets/images/phishingvideo.png\",\"imageHint\":\"phishing video\"},{\"id\":\"msp-success-story\",\"description\":\"Thumbnail for MSP success story video\",\"imageUrl\":\"/assets/images/teamsuccess.png\",\"imageHint\":\"team success\"},{\"id\":\"phishing-analysis-dashboard\",\"description\":\"Dashboard on a tablet showing analysis reports\",\"imageUrl\":\"/assets/images/analysisdashboard.png\",\"imageHint\":\"analysis dashboard\"},{\"id\":\"auto-remediation-dashboard\",\"description\":\"Dashboard showing auto-remediation statistics\",\"imageUrl\":\"/assets/images/remediationdashboard.png\",\"imageHint\":\"remediation dashboard\"},{\"id\":\"url-rewriting-dashboard\",\"description\":\"Dashboard showing URL rewriting statistics\",\"imageUrl\":\"/assets/images/urlrewriting.png\",\"imageHint\":\"url rewriting\"},{\"id\":\"advanced-m365-security-dashboard\",\"description\":\"Dashboard showing advanced M365 security metrics\",\"imageUrl\":\"/assets/images/m365security.png\",\"imageHint\":\"m365 security\"},{\"id\":\"bec-protection-dashboard\",\"description\":\"Dashboard showing business email compromise protection statistics\",\"imageUrl\":\"/assets/images/becprotection.png\",\"imageHint\":\"bec protection\"},{\"id\":\"eutelsat-logo\",\"description\":\"Eutelsat logo\",\"imageUrl\":\"/assets/images/eutelsatlogo.png\",\"imageHint\":\"eutelsat logo\"},{\"id\":\"medicus-it-logo\",\"description\":\"Medicus IT logo\",\"imageUrl\":\"/assets/images/medicuslogo.png\",\"imageHint\":\"medicus logo\"},{\"id\":\"nostra-logo\",\"description\":\"Nostra logo\",\"imageUrl\":\"/assets/images/nostralogo.png\",\"imageHint\":\"nostra logo\"},{\"id\":\"health-care-analytics\",\"description\":\"Doctors looking at analytics on a laptop\",\"imageUrl\":\"/assets/images/doctoranalytics.png\",\"imageHint\":\"doctors analytics\"},{\"id\":\"manufacturing-workers\",\"description\":\"Two factory workers in safety gear observing a robotic welding arm in action.\",\"imageUrl\":\"/assets/images/factoryworkers.png\",\"imageHint\":\"factory workers\"},{\"id\":\"finance-banking-analytics\",\"description\":\"Financial professionals analyzing charts on a large screen\",\"imageUrl\":\"/assets/images/financeanalytics.png\",\"imageHint\":\"finance analytics\"},{\"id\":\"automotive-process\",\"description\":\"A female customer talking to a male mechanic holding a clipboard in a car garage\",\"imageUrl\":\"/assets/images/mechaniccustomer.png\",\"imageHint\":\"mechanic customer\"},{\"id\":\"media-advertising-megaphone\",\"description\":\"Illustration of a person with a megaphone surrounded by media icons\",\"imageUrl\":\"/assets/images/mediaadvertising.png\",\"imageHint\":\"media advertising\"}]}"));}}),
 "[project]/src/lib/placeholder-images.ts [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
 

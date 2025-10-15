@@ -75,133 +75,133 @@
     {
       "id": "team-hero-illustration",
       "description": "Illustration of a team collaborating at a table",
-      "imageUrl": "/assets/images/ourteam.png",
+      "imageUrl": "/assets/images/ourteam.jpg",
       "imageHint": "our team"
     },
     {
       "id": "careers-hero-illustration",
       "description": "Illustration of people collaborating in an office",
-      "imageUrl": "/assets/images/officecollab.png",
+      "imageUrl": "/assets/images/officecollab.jpg",
       "imageHint": "office collaboration"
     },
     {
       "id": "careers-info-illustration",
       "description": "Illustration representing career growth and opportunity",
-      "imageUrl": "/assets/images/carrergrowth.png",
+      "imageUrl": "/assets/images/carrergrowth.jpg",
       "imageHint": "career growth"
     },
     {
       "id": "vasu-maganti",
       "description": "Photo of Vasu Maganti",
-      "imageUrl": "/assets/images/maleportrait.png",
+      "imageUrl": "/assets/images/maleportrait.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "chakradhar-rao",
       "description": "Photo of Chakradhar Rao",
-      "imageUrl": "/assets/images/maleportrait2.png",
+      "imageUrl": "/assets/images/maleportrait2.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "joshua-hurst",
       "description": "Photo of Joshua Hurst",
-      "imageUrl": "/assets/images/maleportrait3.png",
+      "imageUrl": "/assets/images/maleportrait3.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "venkat-rs",
       "description": "Photo of Venkat R S",
-      "imageUrl": "/assets/images/maleportrait4.png",
+      "imageUrl": "/assets/images/maleportrait4.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "srini-maganti",
       "description": "Photo of Srini Maganti",
-      "imageUrl": "/assets/images/maleportrait5.png",
+      "imageUrl": "/assets/images/maleportrait5.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "mohammad-sikandar",
       "description": "Photo of Mohammad Sikandar",
-      "imageUrl": "/assets/images/maleportrait6.png",
+      "imageUrl": "/assets/images/maleportrait6.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "anand-panimaya",
       "description": "Photo of Anand Panimaya",
-      "imageUrl": "/assets/images/maleportrait7.png",
+      "imageUrl": "/assets/images/maleportrait7.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "zaman-kazi",
       "description": "Photo of Zaman Kazi",
-      "imageUrl": "/assets/images/maleportrait8.png",
+      "imageUrl": "/assets/images/maleportrait8.jpg",
       "imageHint": "male portrait"
     },
     {
       "id": "about-hero-image",
       "description": "About Us button",
-      "imageUrl": "/assets/images/aboutus2.png",
+      "imageUrl": "/assets/images/aboutus2.jpg",
       "imageHint": "about us"
     },
     {
       "id": "sourcing-main-image",
       "description": "A person touching a holographic screen with a world map",
-      "imageUrl": "/assets/images/outsourcingworld.png",
+      "imageUrl": "/assets/images/outsourcingworld.jpg",
       "imageHint": "outsourcing world"
     },
     {
       "id": "medical-coding-1",
       "description": "Doctor discussing with a young patient and her mother",
-      "imageUrl": "/assets/images/doctorpatient.png",
+      "imageUrl": "/assets/images/doctorpatient.jpg",
       "imageHint": "doctor patient"
     },
     {
       "id": "medical-coding-2",
       "description": "Two female doctors working at a computer",
-      "imageUrl": "/assets/images/doctorcomputer.png",
+      "imageUrl": "/assets/images/doctorcomputer.jpg",
       "imageHint": "doctors computer"
     },
     {
       "id": "web-dev-1",
       "description": "A developer working on a laptop with code icons overlayed",
-      "imageUrl": "/assets/images/developerlaptop.png",
+      "imageUrl": "/assets/images/developerlaptop.jpg",
       "imageHint": "developer laptop"
     },
     {
       "id": "web-dev-2",
       "description": "A developer holding a tablet with code icons overlayed",
-      "imageUrl": "/assets/images/developertablet.png",
+      "imageUrl": "/assets/images/developertablet.jpg",
       "imageHint": "developer tablet"
     },
     {
       "id": "app-dev-1",
       "description": "A developer working on a laptop with mobile UI overlays",
-      "imageUrl": "/assets/images/appdeveloper.png",
+      "imageUrl": "/assets/images/appdeveloper.jpg",
       "imageHint": "app developer"
     },
     {
       "id": "app-dev-2",
       "description": "A person using a tablet with app icons floating around",
-      "imageUrl": "/assets/images/appusage.png",
+      "imageUrl": "/assets/images/appusage.jpg",
       "imageHint": "app usage"
     },
     {
       "id": "cloud-computing-1",
       "description": "Isometric illustration of cloud computing services and devices",
-      "imageUrl": "/assets/images/cloudservice.png",
+      "imageUrl": "/assets/images/cloudservice.jpg",
       "imageHint": "cloud services"
     },
     {
       "id": "cloud-computing-2",
       "description": "Isometric illustration of cloud infrastructure and a laptop",
-      "imageUrl": "/assets/images/cloudinfrastructure.png",
+      "imageUrl": "/assets/images/cloudinfrastructure.jpg",
       "imageHint": "cloud infrastructure"
     },
     {
       "id": "qa-testing-1",
       "description": "Illustration of people testing an application with a magnifying glass",
-      "imageUrl": "/assets/images/qatesting.png",
+      "imageUrl": "/assets/images/qatesting.jpg",
       "imageHint": "qa testing"
     },
     {
@@ -243,7 +243,7 @@
     {
       "id": "sas-services-2",
       "description": "A team of statisticians collaborating around a table with charts",
-      "imageUrl": "/assets/images/statisticalanalysis.png",
+      "imageUrl": "/assets/images/staticalanalysis.png",
       "imageHint": "statistical analysis"
     },
     {
