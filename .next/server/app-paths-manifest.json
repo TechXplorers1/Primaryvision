@@ -1,3 +1,9 @@
 {
-  "/page": "app/page.js"
+  "/about/page": "app/about/page.js",
+  "/careers/page": "app/careers/page.js",
+  "/detailed-reporting/page": "app/detailed-reporting/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/our-sourcing/page": "app/our-sourcing/page.js",
+  "/page": "app/page.js",
+  "/team/page": "app/team/page.js"
 }

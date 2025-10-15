@@ -42,7 +42,7 @@ const nextConfig: NextConfig = {
       },
 	  {
         protocol: 'https',
-        hostname: 'builtin.com',
+        hostname: 'storage.googleapis.com',
         port: '',
         pathname: '/**',
       },

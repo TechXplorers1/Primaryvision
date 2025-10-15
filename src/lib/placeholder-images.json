@@ -3,25 +3,25 @@
     {
       "id": "hero-globe",
       "description": "A glowing digital globe with network lines",
-      "imageUrl": "https://builtin.com/sites/www.builtin.com/files/2024-10/cybersecurity.png",
+      "imageUrl": "/assets/images/image.png",
       "imageHint": "cyber security"
     },
     {
       "id": "threat-map",
       "description": "A world map showing digital threats",
-      "imageUrl": "https://picsum.photos/seed/threatmap/1200/600",
+      "imageUrl": "/assets/images/map.png",
       "imageHint": "threat map"
     },
     {
       "id": "about-us-team",
       "description": "A modern office with people collaborating",
-      "imageUrl": "https://picsum.photos/seed/security-team/600/400",
+      "imageUrl": "/assets/images/mordenoffice.png",
       "imageHint": "security team"
     },
     {
       "id": "cloud-native-journey",
       "description": "A digital shield graphic representing cybersecurity and cloud native technology",
-      "imageUrl": "https://builtin.com/sites/www.builtin.com/files/2024-10/cybersecurity.png",
+      "imageUrl": "/assets/images/cloudnative.png",
       "imageHint": "cybersecurity"
     },
     {
@@ -33,7 +33,7 @@
     {
       "id": "iso-logo",
       "description": "ISO 27001 certified logo",
-      "imageUrl": "https://picsum.photos/seed/certification/200/100",
+      "imageUrl": "/assets/images/iso.png",
       "imageHint": "certification"
     },
     {
