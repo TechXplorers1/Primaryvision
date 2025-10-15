@@ -39,13 +39,13 @@
     {
       "id": "award-logo-1",
       "description": "Partner award logo 1",
-      "imageUrl":"/assets/images/award.png",
+      "imageUrl":"/assets/images/award.jpg",
       "imageHint": "award"
     },
     {
       "id": "award-logo-2",
       "description": "Partner award logo 2",
-      "imageUrl": "/assets/images/partner.png",
+      "imageUrl": "/assets/images/partner.jpg",
       "imageHint": "partner"
     },
     {
@@ -57,19 +57,19 @@
     {
       "id": "about-us-intro",
       "description": "A lightbulb representing ideas and people",
-      "imageUrl": "/assets/images/aboutus.png",
+      "imageUrl": "/assets/images/aboutus.jpg",
       "imageHint": "about us"
     },
     {
       "id": "vision-mission-intro",
       "description": "A person flying on a rocket with gears, representing vision and strategy",
-      "imageUrl": "/assets/images/visionmission.png",
+      "imageUrl": "/assets/images/visionmission.jpg",
       "imageHint": "vision mission"
     },
     {
       "id": "our-products-intro",
       "description": "A rocket launching, representing products",
-      "imageUrl": "/assets/images/ourproducts.png",
+      "imageUrl": "/assets/images/ourproducts.jpg",
       "imageHint": "our products"
     },
     {
