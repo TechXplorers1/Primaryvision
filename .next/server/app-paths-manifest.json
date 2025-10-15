@@ -1,21 +1,5 @@
 {
   "/_not-found/page": "app/_not-found/page.js",
-  "/about/page": "app/about/page.js",
-  "/app-development/page": "app/app-development/page.js",
-  "/automotive/page": "app/automotive/page.js",
-  "/careers/page": "app/careers/page.js",
-  "/cloud-computing/page": "app/cloud-computing/page.js",
-  "/cyber-security/page": "app/cyber-security/page.js",
-  "/data-analytics/page": "app/data-analytics/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/finance-banking/page": "app/finance-banking/page.js",
-  "/health-care/page": "app/health-care/page.js",
-  "/manufacturing/page": "app/manufacturing/page.js",
-  "/media-advertising/page": "app/media-advertising/page.js",
-  "/medical-coding/page": "app/medical-coding/page.js",
-  "/our-sourcing/page": "app/our-sourcing/page.js",
-  "/qa-testing/page": "app/qa-testing/page.js",
-  "/sas-services/page": "app/sas-services/page.js",
-  "/ux-ui-design/page": "app/ux-ui-design/page.js",
-  "/web-development/page": "app/web-development/page.js"
+  "/page": "app/page.js"
 }
