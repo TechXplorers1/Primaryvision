@@ -670,7 +670,7 @@ const serviceLinks = [
     },
     {
         href: '/web-development',
-        label: 'Web Development'
+        label: 'Web Application'
     },
     {
         href: '/app-development',
