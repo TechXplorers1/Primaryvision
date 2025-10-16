@@ -25,7 +25,7 @@ const serviceLinks = [
     { href: '/app-development', label: 'APP Development' },
     { href: '/cloud-computing', label: 'Cloud Computing' },
     { href: '/qa-testing', label: 'QA & Testing' },
-    { href: '/data-analytics', label: 'Data Analytics' },
+    { href: '/data-analytics', label: 'Data Analysis' },
     { href: '/ux-ui-design', label: 'UX/UI Design' },
     { href: '/sas-services', label: 'SAS Services' },
 ];

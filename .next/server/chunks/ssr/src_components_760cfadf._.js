@@ -686,7 +686,7 @@ const serviceLinks = [
     },
     {
         href: '/data-analytics',
-        label: 'Data Analytics'
+        label: 'Data Analysis'
     },
     {
         href: '/ux-ui-design',

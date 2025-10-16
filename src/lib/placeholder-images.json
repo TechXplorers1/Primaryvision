@@ -147,61 +147,61 @@
     {
       "id": "sourcing-main-image",
       "description": "A person touching a holographic screen with a world map",
-      "imageUrl": "/assets/images/outsourcingworld.jpg",
+      "imageUrl": "/assets/images/outsourcingworld.png",
       "imageHint": "outsourcing world"
     },
     {
       "id": "medical-coding-1",
       "description": "Doctor discussing with a young patient and her mother",
-      "imageUrl": "/assets/images/doctorpatient.jpg",
+      "imageUrl": "/assets/images/clinicaldata.png",
       "imageHint": "doctor patient"
     },
     {
       "id": "medical-coding-2",
       "description": "Two female doctors working at a computer",
-      "imageUrl": "/assets/images/doctorcomputer.jpg",
+      "imageUrl": "/assets/images/developertablet.png",
       "imageHint": "doctors computer"
     },
     {
       "id": "web-dev-1",
       "description": "A developer working on a laptop with code icons overlayed",
-      "imageUrl": "/assets/images/developerlaptop.jpg",
+      "imageUrl": "/assets/images/appdeveloper.png",
       "imageHint": "developer laptop"
     },
     {
       "id": "web-dev-2",
       "description": "A developer holding a tablet with code icons overlayed",
-      "imageUrl": "/assets/images/developertablet.jpg",
+      "imageUrl": "/assets/images/doctorcomputer.png",
       "imageHint": "developer tablet"
     },
     {
       "id": "app-dev-1",
       "description": "A developer working on a laptop with mobile UI overlays",
-      "imageUrl": "/assets/images/appdeveloper.jpg",
+      "imageUrl": "/assets/images/developerlaptop.jpg",
       "imageHint": "app developer"
     },
     {
       "id": "app-dev-2",
       "description": "A person using a tablet with app icons floating around",
-      "imageUrl": "/assets/images/appusage.jpg",
+      "imageUrl": "/assets/images/appuseage.png",
       "imageHint": "app usage"
     },
     {
       "id": "cloud-computing-1",
       "description": "Isometric illustration of cloud computing services and devices",
-      "imageUrl": "/assets/images/cloudservice.jpg",
+      "imageUrl": "/assets/images/cloudservice.png",
       "imageHint": "cloud services"
     },
     {
       "id": "cloud-computing-2",
       "description": "Isometric illustration of cloud infrastructure and a laptop",
-      "imageUrl": "/assets/images/cloudinfrastructure.jpg",
+      "imageUrl": "/assets/images/cloudinfrastructure.png",
       "imageHint": "cloud infrastructure"
     },
     {
       "id": "qa-testing-1",
       "description": "Illustration of people testing an application with a magnifying glass",
-      "imageUrl": "/assets/images/qatesting.jpg",
+      "imageUrl": "/assets/images/qatesting.png",
       "imageHint": "qa testing"
     },
     {
@@ -213,7 +213,7 @@
     {
       "id": "data-analytics-1",
       "description": "A team analyzing charts on a laptop",
-      "imageUrl": "/assets/images/dataanalysis.png",
+      "imageUrl": "/assets/images/dataanlysis.png",
       "imageHint": "data analysis"
     },
     {
@@ -237,13 +237,13 @@
     {
       "id": "sas-services-1",
       "description": "A scientist looking at clinical data on a computer screen",
-      "imageUrl": "/assets/images/clinicaldata.png",
+      "imageUrl": "/assets/images/doctorpatient.jpg",
       "imageHint": "clinical data"
     },
     {
       "id": "sas-services-2",
       "description": "A team of statisticians collaborating around a table with charts",
-      "imageUrl": "/assets/images/staticalanalysis.png",
+      "imageUrl": "/assets/images/staticanalysis.png",
       "imageHint": "statistical analysis"
     },
     {
