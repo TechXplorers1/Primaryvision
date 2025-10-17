@@ -674,7 +674,7 @@ const serviceLinks = [
     },
     {
         href: '/app-development',
-        label: 'APP Development'
+        label: 'Mobile application'
     },
     {
         href: '/cloud-computing',

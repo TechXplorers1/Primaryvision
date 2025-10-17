@@ -92,11 +92,11 @@ const services = [
     },
     {
         href: '/web-development',
-        label: 'Web Development'
+        label: 'Web Application'
     },
     {
         href: '/app-development',
-        label: 'APP Development'
+        label: 'Mobile Application'
     },
     {
         href: '/cloud-computing',
@@ -108,7 +108,7 @@ const services = [
     },
     {
         href: '/data-analytics',
-        label: 'Data Analytics'
+        label: 'Data Analysis'
     },
     {
         href: '/ux-ui-design',
@@ -547,7 +547,7 @@ function AppDevelopmentHero() {
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
                         className: "text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl",
-                        children: "App Development"
+                        children: "Mobile Application"
                     }, void 0, false, {
                         fileName: "[project]/src/components/sections/app-development-hero.tsx",
                         lineNumber: 11,
@@ -648,7 +648,7 @@ function AppDevelopmentMain() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
                                     className: "text-3xl font-bold tracking-tight sm:text-4xl",
-                                    children: "App Development"
+                                    children: "Mobile Application"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/app-development-main.tsx",
                                     lineNumber: 26,
@@ -656,7 +656,7 @@ function AppDevelopmentMain() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-6 text-muted-foreground",
-                                    children: "Mobile app development focuses on building software applications that run on mobile devices such as smartphones and tablets. We specialize in creating dynamic Android and iOS apps that are feature-rich, high-performing, and user-friendly. Our apps are custom-designed to meet specific business needs, ensuring they provide practical solutions for businesses of all sizes."
+                                    children: "Mobile Application focuses on building software applications that run on mobile devices such as smartphones and tablets. We specialize in creating dynamic Android and iOS apps that are feature-rich, high-performing, and user-friendly. Our apps are custom-designed to meet specific business needs, ensuring they provide practical solutions for businesses of all sizes."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/app-development-main.tsx",
                                     lineNumber: 29,
@@ -688,7 +688,7 @@ function AppDevelopmentMain() {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                             className: "text-2xl font-bold tracking-tight sm:text-3xl",
-                            children: "Custom Mobile App Development"
+                            children: "Custom Mobile Application"
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/app-development-main.tsx",
                             lineNumber: 39,
@@ -696,7 +696,7 @@ function AppDevelopmentMain() {
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             className: "text-muted-foreground",
-                            children: "Custom Mobile App Development focuses on creating personalized Android and iOS applications that cater to the unique needs of startups, SMEs, and enterprises. Our development process begins with an in-depth analysis of your business requirements, ensuring that every feature and function aligns with your specific goals. We prioritize scalability, security, and user experience, delivering apps that enhance your brand’s presence in the digital space."
+                            children: "Custom Mobile Application focuses on creating personalized Android and iOS applications that cater to the unique needs of startups, SMEs, and enterprises. Our development process begins with an in-depth analysis of your business requirements, ensuring that every feature and function aligns with your specific goals. We prioritize scalability, security, and user experience, delivering apps that enhance your brand’s presence in the digital space."
                         }, void 0, false, {
                             fileName: "[project]/src/components/sections/app-development-main.tsx",
                             lineNumber: 40,
@@ -716,7 +716,7 @@ function AppDevelopmentMain() {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                     className: "text-2xl font-bold tracking-tight sm:text-3xl",
-                                    children: "Cross-Platform App Development"
+                                    children: "Cross-Platform Mobile Application"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/app-development-main.tsx",
                                     lineNumber: 47,
@@ -724,7 +724,7 @@ function AppDevelopmentMain() {
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "mt-4 text-muted-foreground",
-                                    children: "Cross-Platform App Development allows us to create applications that run seamlessly on both Android and iOS devices using powerful frameworks like React Native and Flutter. This approach enables us to build a single codebase, reducing the development time and effort required to support both platforms."
+                                    children: "Cross-Platform Mobile Application allows us to create applications that run seamlessly on both Android and iOS devices using powerful frameworks like React Native and Flutter. This approach enables us to build a single codebase, reducing the development time and effort required to support both platforms."
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/sections/app-development-main.tsx",
                                     lineNumber: 48,

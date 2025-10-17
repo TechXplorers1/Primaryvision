@@ -4,11 +4,11 @@ import { Phone, Mail, Twitter, Linkedin, Facebook } from 'lucide-react';
 const services = [
     { href: '/medical-coding', label: 'Medical Coding' },
     { href: '/cyber-security', label: 'Cyber Security' },
-    { href: '/web-development', label: 'Web Development' },
-    { href: '/app-development', label: 'APP Development' },
+    { href: '/web-development', label: 'Web Application' },
+    { href: '/app-development', label: 'Mobile Application' },
     { href: '/cloud-computing', label: 'Cloud Computing' },
     { href: '/qa-testing', label: 'QA & Testing' },
-    { href: '/data-analytics', label: 'Data Analytics' },
+    { href: '/data-analytics', label: 'Data Analysis' },
     { href: '/ux-ui-design', label: 'UX/UI Design' },
     { href: '/sas-services', label: 'SAS Services' },
 ];

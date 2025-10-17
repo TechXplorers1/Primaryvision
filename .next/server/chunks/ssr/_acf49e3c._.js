@@ -92,11 +92,11 @@ const services = [
     },
     {
         href: '/web-development',
-        label: 'Web Development'
+        label: 'Web Application'
     },
     {
         href: '/app-development',
-        label: 'APP Development'
+        label: 'Mobile Application'
     },
     {
         href: '/cloud-computing',
@@ -108,7 +108,7 @@ const services = [
     },
     {
         href: '/data-analytics',
-        label: 'Data Analytics'
+        label: 'Data Analysis'
     },
     {
         href: '/ux-ui-design',

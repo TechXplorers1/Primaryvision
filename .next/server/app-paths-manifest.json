@@ -1,12 +1,10 @@
 {
   "/app-development/page": "app/app-development/page.js",
-  "/cloud-computing/page": "app/cloud-computing/page.js",
   "/cyber-security/page": "app/cyber-security/page.js",
   "/data-analytics/page": "app/data-analytics/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/medical-coding/page": "app/medical-coding/page.js",
+  "/health-care/page": "app/health-care/page.js",
   "/page": "app/page.js",
-  "/qa-testing/page": "app/qa-testing/page.js",
   "/sas-services/page": "app/sas-services/page.js",
   "/ux-ui-design/page": "app/ux-ui-design/page.js",
   "/web-development/page": "app/web-development/page.js"

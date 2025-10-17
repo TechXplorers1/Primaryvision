@@ -24,10 +24,10 @@ export default function AppDevelopmentMain() {
           </AnimatedItem>
           <AnimatedItem from="right">
             <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-              App Development
+              Mobile Application
             </h2>
             <p className="mt-6 text-muted-foreground">
-              Mobile app development focuses on building software applications that run on mobile devices such as smartphones and tablets. We specialize in creating dynamic Android and iOS apps that are feature-rich, high-performing, and user-friendly. Our apps are custom-designed to meet specific business needs, ensuring they provide practical solutions for businesses of all sizes.
+              Mobile Application focuses on building software applications that run on mobile devices such as smartphones and tablets. We specialize in creating dynamic Android and iOS apps that are feature-rich, high-performing, and user-friendly. Our apps are custom-designed to meet specific business needs, ensuring they provide practical solutions for businesses of all sizes.
             </p>
             <p className="mt-4 text-muted-foreground">
               Our goal is to deliver seamless cross-platform experiences that enhance user engagement, increase revenue, and support business growth. By leveraging modern development tools and frameworks, we build scalable, secure, and interactive apps that deliver a smooth user experience.
@@ -36,17 +36,17 @@ export default function AppDevelopmentMain() {
         </div>
 
         <AnimatedSection from="bottom" className="space-y-4">
-            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">Custom Mobile App Development</h3>
+            <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">Custom Mobile Application</h3>
             <p className="text-muted-foreground">
-            Custom Mobile App Development focuses on creating personalized Android and iOS applications that cater to the unique needs of startups, SMEs, and enterprises. Our development process begins with an in-depth analysis of your business requirements, ensuring that every feature and function aligns with your specific goals. We prioritize scalability, security, and user experience, delivering apps that enhance your brand’s presence in the digital space.
+            Custom Mobile Application focuses on creating personalized Android and iOS applications that cater to the unique needs of startups, SMEs, and enterprises. Our development process begins with an in-depth analysis of your business requirements, ensuring that every feature and function aligns with your specific goals. We prioritize scalability, security, and user experience, delivering apps that enhance your brand’s presence in the digital space.
             </p>
         </AnimatedSection>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <AnimatedItem from="left">
-                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">Cross-Platform App Development</h3>
+                <h3 className="text-2xl font-bold tracking-tight sm:text-3xl">Cross-Platform Mobile Application</h3>
                 <p className="mt-4 text-muted-foreground">
-                Cross-Platform App Development allows us to create applications that run seamlessly on both Android and iOS devices using powerful frameworks like React Native and Flutter. This approach enables us to build a single codebase, reducing the development time and effort required to support both platforms.
+                Cross-Platform Mobile Application allows us to create applications that run seamlessly on both Android and iOS devices using powerful frameworks like React Native and Flutter. This approach enables us to build a single codebase, reducing the development time and effort required to support both platforms.
                 </p>
                 <p className="mt-4 text-muted-foreground">
                 The key benefit of cross-platform development is its cost-effectiveness. By developing apps for both platforms simultaneously, we significantly reduce the overall development costs.
