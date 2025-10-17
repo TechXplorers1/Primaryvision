@@ -22,7 +22,7 @@ import React from 'react';
 const serviceLinks = [
     { href: '/medical-coding', label: 'Medical Coding' },
     { href: '/web-development', label: 'Web Application' },
-    { href: '/app-development', label: 'Mobile application' },
+    { href: '/app-development', label: 'Mobile Application' },
     { href: '/cloud-computing', label: 'Cloud Computing' },
     { href: '/qa-testing', label: 'QA & Testing' },
     { href: '/data-analytics', label: 'Data Analysis' },
