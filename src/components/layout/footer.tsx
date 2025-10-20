@@ -121,7 +121,7 @@ export default function Footer() {
                 <StandardLink href="https://www.facebook.com/" className="text-muted-foreground hover:text-primary"><Facebook /></StandardLink>
                 
                 {/* YouTube */}
-                <StandardLink href="https://www.youtube.com/@VjSiddhuVlog" className="text-muted-foreground hover:text-primary">
+                <StandardLink href="https://www.youtube.com" className="text-muted-foreground hover:text-primary">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube">
                     <path d="M2.5 17a24.12 24.12 0 0 1 0-10C2.5 6 4.5 4 7 4h10c2.5 0 4.5 2 4.5 3.5v10c0 1.5-2 3.5-4.5 3.5H7c-2.5 0-4.5-2-4.5-3.5Z"/>
                     <path d="m10 9 5 3-5 3Z"/>

@@ -1,11 +1,4 @@
 {
-  "/about/page": "app/about/page.js",
-  "/api/apply-job/route": "app/api/apply-job/route.js",
-  "/api/send-quote/route": "app/api/send-quote/route.js",
-  "/careers/page": "app/careers/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/get-a-quote/page": "app/get-a-quote/page.js",
-  "/our-sourcing/page": "app/our-sourcing/page.js",
-  "/page": "app/page.js",
-  "/ux-ui-design/page": "app/ux-ui-design/page.js"
+  "/page": "app/page.js"
 }
