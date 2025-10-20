@@ -2,8 +2,10 @@
 
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
-export default function ScrollToAnchor() {
+// Inner component — where useSearchParams is actually used
+function ScrollToAnchorInner() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -21,4 +23,13 @@ export default function ScrollToAnchor() {
   }, [pathname, searchParams]);
 
   return null;
+}
+
+// ✅ Outer wrapper — provides the required Suspense boundary
+export default function ScrollToAnchor() {
+  return (
+    <Suspense fallback={null}>
+      <ScrollToAnchorInner />
+    </Suspense>
+  );
 }

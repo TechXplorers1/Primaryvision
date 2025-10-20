@@ -1,3 +1,6 @@
+"use client";
+
+import { Suspense } from "react";
 import AnimatedSection from '@/components/animated-section';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
@@ -9,7 +12,10 @@ export default function GetAQuotePage() {
       <Header />
       <main className="flex-1">
         <AnimatedSection>
+          {/* ✅ Suspense fixes the useSearchParams build error */}
+          <Suspense fallback={<div>Loading...</div>}>
             <GetAQuote />
+          </Suspense>
         </AnimatedSection>
       </main>
       <Footer />

@@ -1,3 +1,6 @@
+"use client";
+
+import { Suspense } from "react";
 import AnimatedSection from '@/components/animated-section';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
@@ -11,10 +14,14 @@ export default function ManufacturingPage() {
       <main className="flex-1">
         <ManufacturingHero />
         <AnimatedSection>
-          <ManufacturingMain />
+          {/* ✅ Wrap Suspense to handle useSearchParams safely */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <ManufacturingMain />
+          </Suspense>
         </AnimatedSection>
       </main>
       <Footer />
     </div>
   );
 }
+

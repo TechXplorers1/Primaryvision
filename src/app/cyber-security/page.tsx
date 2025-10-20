@@ -1,3 +1,6 @@
+"use client";
+
+import { Suspense } from "react";
 import AnimatedSection from '@/components/animated-section';
 import Footer from '@/components/layout/footer';
 import Header from '@/components/layout/header';
@@ -15,17 +18,29 @@ export default function CyberSecurityPage() {
       <main className="flex-1">
         <CyberSecurityHero />
         <CyberSecurityIntro />
+
         <AnimatedSection>
+          <Suspense fallback={<div>Loading...</div>}>
             <CyberSecuritySolutions />
+          </Suspense>
         </AnimatedSection>
+
         <AnimatedSection>
+          <Suspense fallback={<div>Loading...</div>}>
             <CyberSecurityBundles />
+          </Suspense>
         </AnimatedSection>
+
         <AnimatedSection>
+          <Suspense fallback={<div>Loading...</div>}>
             <CyberSecurityAdvancedProtection />
+          </Suspense>
         </AnimatedSection>
+
         <AnimatedSection>
+          <Suspense fallback={<div>Loading...</div>}>
             <AiThreatPrioritization />
+          </Suspense>
         </AnimatedSection>
       </main>
       <Footer />
