@@ -1,33 +1,7 @@
 import { Phone, Mail, Twitter, Linkedin, Facebook } from 'lucide-react';
 import React from 'react';
 
-// 1. Define the props interface for the helper link component
-interface StandardLinkProps {
-    href: string;
-    children: React.ReactNode;
-    className?: string;
-    target?: string;
-    rel?: string;
-}
-
-// 2. Add explicit types to the StandardLink component
-const StandardLink: React.FC<StandardLinkProps> = ({ 
-    href, 
-    children, 
-    className, 
-    target, 
-    rel 
-}) => (
-    // Ensure all props are spread, but provide defaults if they are missing
-    <a 
-        href={href} 
-        className={className} 
-        target={target} 
-        rel={rel}
-    >
-        {children}
-    </a>
-);
+// Removed StandardLink and StandardLinkProps interfaces as they are not needed.
 
 const services = [
     { href: '/medical-coding', label: 'Medical Coding' },
@@ -60,9 +34,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((link) => (
                 <li key={link.label}>
-                  <StandardLink href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  {/* Using standard <a> tag for internal navigation */}
+                  <a 
+                    href={link.href} 
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {link.label}
-                  </StandardLink>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -73,9 +51,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <StandardLink href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  {/* Using standard <a> tag for internal navigation */}
+                  <a 
+                    href={link.href} 
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     {link.label}
-                  </StandardLink>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -90,43 +72,55 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary"/>
-                    {/* Mailto link doesn't require target/rel, but must pass className */}
-                    <StandardLink href="mailto:info@primaryvision.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    {/* Standard <a> for mailto link */}
+                    <a href="mailto:info@primaryvision.com" className="text-muted-foreground hover:text-primary transition-colors">
                         info@primaryvision.com
-                    </StandardLink>
+                    </a>
                 </li>
             </ul>
             <div className="flex gap-4 mt-6 justify-center">
-                {/* Twitter/X */}                
-                <StandardLink 
+                {/* External Link: Twitter/X */}                
+                <a 
                   href="https://x.com/Prakashkumar_02" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-muted-foreground hover:text-primary"
                 >
                   <Twitter />
-                </StandardLink>
+                </a>
 
-                {/* Updated LinkedIn link */}
-                <StandardLink 
+                {/* External Link: LinkedIn */}
+                <a 
                   href="https://www.linkedin.com/in/skprakash/" 
                   target="_blank" 
                   rel="noopener noreferrer" 
                   className="text-muted-foreground hover:text-primary"
                 >
                   <Linkedin />
-                </StandardLink>
+                </a>
                 
-                {/* Facebook */}
-                <StandardLink href="https://www.facebook.com/" className="text-muted-foreground hover:text-primary"><Facebook /></StandardLink>
+                {/* External Link: Facebook */}
+                <a 
+                    href="https://www.facebook.com/" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-muted-foreground hover:text-primary"
+                >
+                    <Facebook />
+                </a>
                 
-                {/* YouTube */}
-                <StandardLink href="https://www.youtube.com" className="text-muted-foreground hover:text-primary">
+                {/* External Link: YouTube */}
+                <a 
+                    href="https://www.youtube.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="text-muted-foreground hover:text-primary"
+                >
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube">
                     <path d="M2.5 17a24.12 24.12 0 0 1 0-10C2.5 6 4.5 4 7 4h10c2.5 0 4.5 2 4.5 3.5v10c0 1.5-2 3.5-4.5 3.5H7c-2.5 0-4.5-2-4.5-3.5Z"/>
                     <path d="m10 9 5 3-5 3Z"/>
                   </svg>
-                </StandardLink>
+                </a>
             </div>
           </div>
         </div>
@@ -136,12 +130,12 @@ export default function Footer() {
                     &copy; {new Date().getFullYear()} Primary Vision. All rights reserved.
                 </p>
                 <div className="flex items-center gap-4">
-                    <StandardLink href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                    <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     Privacy Policy
-                    </StandardLink>
-                    <StandardLink href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                    </a>
+                    <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     Terms of Service
-                    </StandardLink>
+                    </a>
                 </div>
             </div>
         </div>

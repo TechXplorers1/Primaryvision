@@ -1,4 +1,19 @@
 {
+  "/about/page": "app/about/page.js",
+  "/api/apply-job/route": "app/api/apply-job/route.js",
+  "/api/send-quote/route": "app/api/send-quote/route.js",
+  "/app-development/page": "app/app-development/page.js",
+  "/careers/page": "app/careers/page.js",
+  "/cloud-computing/page": "app/cloud-computing/page.js",
+  "/cyber-security/page": "app/cyber-security/page.js",
+  "/data-analytics/page": "app/data-analytics/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/page": "app/page.js"
+  "/get-a-quote/page": "app/get-a-quote/page.js",
+  "/medical-coding/page": "app/medical-coding/page.js",
+  "/our-sourcing/page": "app/our-sourcing/page.js",
+  "/page": "app/page.js",
+  "/qa-testing/page": "app/qa-testing/page.js",
+  "/sas-services/page": "app/sas-services/page.js",
+  "/ux-ui-design/page": "app/ux-ui-design/page.js",
+  "/web-development/page": "app/web-development/page.js"
 }
