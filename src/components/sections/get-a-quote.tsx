@@ -18,14 +18,19 @@ import { Shield, Star, Package } from 'lucide-react';
 import Image from 'next/image';
 import { placeholderImages } from '@/lib/placeholder-images';
 
+// Zod Schema remains the same
 const formSchema = z.object({
   firstName: z.string().min(2, 'First name must be at least 2 characters.'),
   lastName: z.string().min(2, 'Last name must be at least 2 characters.'),
   businessName: z.string().min(2, 'Business name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email address.'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits.'),
+  typeOfInquiry: z.string().min(30, 'Please specify the type of inquiry.'),
 });
 
+type FormValues = z.infer<typeof formSchema>;
+
+// Features array remains the same
 const features = [
   {
     icon: <Shield className="h-6 w-6" />,
@@ -51,7 +56,7 @@ const partnerLogos = [
 ];
 
 export default function GetAQuote() {
-  const form = useForm<z.infer<typeof formSchema>>({
+  const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
       firstName: '',
@@ -59,16 +64,46 @@ export default function GetAQuote() {
       businessName: '',
       email: '',
       phone: '',
+      typeOfInquiry: '',
     },
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    console.log(values);
-    toast({
-      title: 'Quote Requested!',
-      description: 'Thank you! We will be in touch with you shortly.',
-    });
-    form.reset();
+  // Get the submission state to disable the button
+  const { isSubmitting } = form.formState;
+
+  // 🐛 UPDATED onSubmit FUNCTION to send data to the API route
+  async function onSubmit(values: FormValues) {
+    try {
+      const response = await fetch('/api/send-quote', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      if (!response.ok) {
+        // Handle server-side errors (e.g., email failed to send)
+        throw new Error('Failed to send quote request. Server error.');
+      }
+
+      // Success Toast
+      toast({
+        title: 'Quote Requested! 🚀',
+        description: 'Thank you! We will be in touch with you shortly.',
+        variant: 'default',
+      });
+      form.reset();
+
+    } catch (error) {
+      console.error('Submission Error:', error);
+      // Error Toast
+      toast({
+        title: 'Submission Failed 😢',
+        description: 'There was an issue sending your request. Please check your connection or contact us directly.',
+        variant: 'destructive',
+      });
+    }
   }
 
   return (
@@ -167,8 +202,26 @@ export default function GetAQuote() {
                     </FormItem>
                   )}
                 />
-                <Button type="submit" size="lg" className="w-full bg-foreground hover:bg-foreground/90 text-background text-lg py-7 rounded-full">
-                  REQUEST A QUOTE
+                <FormField
+                    control={form.control}
+                    name="typeOfInquiry"
+                    render={({ field }) => (
+                        <FormItem>
+                        <FormLabel>Type of Inquiry *</FormLabel>
+                        <FormControl>
+                            <Input placeholder="Enter your Inquiry" {...field} className="bg-white" />
+                        </FormControl>
+                        <FormMessage />
+                        </FormItem>
+                    )}
+                    />
+                <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full bg-foreground hover:bg-foreground/90 text-background text-lg py-7 rounded-full"
+                    disabled={isSubmitting} // 🐛 Disabled when submitting
+                >
+                  {isSubmitting ? 'SENDING...' : 'REQUEST A QUOTE'}
                 </Button>
               </form>
             </Form>

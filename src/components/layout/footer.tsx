@@ -1,5 +1,33 @@
-import Link from 'next/link';
 import { Phone, Mail, Twitter, Linkedin, Facebook } from 'lucide-react';
+import React from 'react';
+
+// 1. Define the props interface for the helper link component
+interface StandardLinkProps {
+    href: string;
+    children: React.ReactNode;
+    className?: string;
+    target?: string;
+    rel?: string;
+}
+
+// 2. Add explicit types to the StandardLink component
+const StandardLink: React.FC<StandardLinkProps> = ({ 
+    href, 
+    children, 
+    className, 
+    target, 
+    rel 
+}) => (
+    // Ensure all props are spread, but provide defaults if they are missing
+    <a 
+        href={href} 
+        className={className} 
+        target={target} 
+        rel={rel}
+    >
+        {children}
+    </a>
+);
 
 const services = [
     { href: '/medical-coding', label: 'Medical Coding' },
@@ -14,11 +42,11 @@ const services = [
 ];
   
   const quickLinks = [
-    { href: '#', label: 'Home' },
-    { href: '#', label: 'About Us' },
-    { href: '#', label: 'Our Team' },
-    { href: '#', label: 'Careers' },
-    { href: '#', label: 'Contact Us' },
+    { href: '/', label: 'Home' },
+    { href: '/about', label: 'About Us' },
+    { href: '/our-sourcing', label: 'Outsourcing' },
+    { href: '/careers', label: 'Careers' },
+    { href: '/get-a-quote', label: 'Contact Us' },
   ];
 
 export default function Footer() {
@@ -32,9 +60,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  <StandardLink href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
-                  </Link>
+                  </StandardLink>
                 </li>
               ))}
             </ul>
@@ -45,9 +73,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <Link href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
+                  <StandardLink href={link.href} className="text-muted-foreground hover:text-primary transition-colors">
                     {link.label}
-                  </Link>
+                  </StandardLink>
                 </li>
               ))}
             </ul>
@@ -58,24 +86,47 @@ export default function Footer() {
             <ul className="space-y-4 inline-block text-left mx-auto">
                 <li className="flex items-center gap-3">
                     <Phone className="h-5 w-5 text-primary"/>
-                    <span className="text-muted-foreground">040-42021524</span>
-                </li>
-                <li className="flex items-center gap-3">
-                    <Phone className="h-5 w-5 text-primary"/>
-                    <span className="text-muted-foreground">510-262-2801</span>
+                    <span className="text-muted-foreground">+1 (202) 674-6678</span>
                 </li>
                 <li className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary"/>
-                    <Link href="mailto:info@primaryvision.com" className="text-muted-foreground hover:text-primary transition-colors">
+                    {/* Mailto link doesn't require target/rel, but must pass className */}
+                    <StandardLink href="mailto:info@primaryvision.com" className="text-muted-foreground hover:text-primary transition-colors">
                         info@primaryvision.com
-                    </Link>
+                    </StandardLink>
                 </li>
             </ul>
             <div className="flex gap-4 mt-6 justify-center">
-                <Link href="#" className="text-muted-foreground hover:text-primary"><Twitter /></Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary"><Linkedin /></Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary"><Facebook /></Link>
-                <Link href="#" className="text-muted-foreground hover:text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube"><path d="M2.5 17a24.12 24.12 0 0 1 0-10C2.5 6 4.5 4 7 4h10c2.5 0 4.5 2 4.5 3.5v10c0 1.5-2 3.5-4.5 3.5H7c-2.5 0-4.5-2-4.5-3.5Z"/><path d="m10 9 5 3-5 3Z"/></svg></Link>
+                {/* Twitter/X */}                
+                <StandardLink 
+                  href="https://x.com/Prakashkumar_02" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  <Twitter />
+                </StandardLink>
+
+                {/* Updated LinkedIn link */}
+                <StandardLink 
+                  href="https://www.linkedin.com/in/skprakash/" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="text-muted-foreground hover:text-primary"
+                >
+                  <Linkedin />
+                </StandardLink>
+                
+                {/* Facebook */}
+                <StandardLink href="https://www.facebook.com/" className="text-muted-foreground hover:text-primary"><Facebook /></StandardLink>
+                
+                {/* YouTube */}
+                <StandardLink href="https://www.youtube.com/@VjSiddhuVlog" className="text-muted-foreground hover:text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-youtube">
+                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10C2.5 6 4.5 4 7 4h10c2.5 0 4.5 2 4.5 3.5v10c0 1.5-2 3.5-4.5 3.5H7c-2.5 0-4.5-2-4.5-3.5Z"/>
+                    <path d="m10 9 5 3-5 3Z"/>
+                  </svg>
+                </StandardLink>
             </div>
           </div>
         </div>
@@ -85,12 +136,12 @@ export default function Footer() {
                     &copy; {new Date().getFullYear()} Primary Vision. All rights reserved.
                 </p>
                 <div className="flex items-center gap-4">
-                    <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                    <StandardLink href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     Privacy Policy
-                    </Link>
-                    <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                    </StandardLink>
+                    <StandardLink href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     Terms of Service
-                    </Link>
+                    </StandardLink>
                 </div>
             </div>
         </div>
