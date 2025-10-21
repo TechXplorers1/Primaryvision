@@ -321,11 +321,23 @@ const parseForm = (request)=>{
     });
 };
 async function POST(request) {
-    // Check Environment Variables
-    if (!process.env.ZOHO_EMAIL_USER || !process.env.RECEIVING_EMAIL) {
+    // Check 1: Mandatory Environment Variables Check (early exit for config errors)
+    if (!process.env.ZOHO_EMAIL_USER || !process.env.ZOHO_EMAIL_PASS || !process.env.RECEIVING_EMAIL) {
         console.error('SERVER ERROR: Email credentials or recipient missing.');
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: 'Server configuration error: Email credentials or recipient missing.'
+        }, {
+            status: 500
+        });
+    }
+    // Check 2: Verify Nodemailer connection to Zoho SMTP *before* processing form data
+    try {
+        await transporter.verify();
+    } catch (authError) {
+        console.error('NODEMAILER AUTHENTICATION FAILED:', authError);
+        // Return a 500 error if authentication or connection fails
+        return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
+            message: 'Email service authentication failed. Check server logs.'
         }, {
             status: 500
         });

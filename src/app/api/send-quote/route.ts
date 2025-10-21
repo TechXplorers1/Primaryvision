@@ -11,56 +11,49 @@ interface QuoteFormData {
   typeOfInquiry: string;
 }
 
-// Nodemailer transport configuration for Zoho Mail (Remains the same)
+// Nodemailer transport configuration for Zoho Mail
 const transporter = nodemailer.createTransport({
   host: 'smtp.zoho.com',
   port: 465,
   secure: true,
   auth: {
-    // These process.env variables MUST be set on your hosting platform!
     user: process.env.ZOHO_EMAIL_USER,    // Your verified Zoho email
     pass: process.env.ZOHO_EMAIL_PASS,    // The App Password
   },
 });
 
 export async function POST(request: Request) {
-  // Check 1: Mandatory Environment Variables Check (early exit for config errors)
+  // Check 1: Mandatory Environment Variables Check
   if (!process.env.ZOHO_EMAIL_USER || !process.env.ZOHO_EMAIL_PASS || !process.env.RECEIVING_EMAIL) {
-    console.error('SERVER ERROR: Email configuration missing for deployment. Check ZOHO_EMAIL_USER, ZOHO_EMAIL_PASS, and RECEIVING_EMAIL environment variables.');
-    return NextResponse.json({ 
-      message: 'Server configuration error: Email service credentials missing.' 
-    }, { status: 500 });
+    console.error('SERVER ERROR: Email configuration missing (User, Pass, or Recipient).');
+    return NextResponse.json({ message: 'Server configuration error.' }, { status: 500 });
   }
-
-  let data: QuoteFormData;
-
+  
+  // Check 2: Verify Nodemailer connection to Zoho SMTP *before* processing form data
   try {
-    // Check 2: Safely parse the request body
-    data = await request.json();
-  } catch (parseError) {
-    console.error('REQUEST ERROR: Failed to parse request body as JSON:', parseError);
-    return NextResponse.json({ message: 'Invalid request body format.' }, { status: 400 });
+    await transporter.verify();
+  } catch (authError) {
+    console.error('NODEMAILER AUTHENTICATION FAILED for Quote Request:', authError);
+    // Return a 500 error if authentication or connection fails
+    return NextResponse.json({ message: 'Email service authentication failed. Check server logs.' }, { status: 500 });
   }
 
   try {
+    const data: QuoteFormData = await request.json();
+
     const { firstName, lastName, businessName, email, phone, typeOfInquiry } = data;
-
-    // Check 3: Basic Data Validation (optional, but good practice)
-    if (!firstName || !email) {
-      return NextResponse.json({ message: 'Missing required fields (Name or Email).' }, { status: 400 });
-    }
 
     const mailOptions = {
       // 1. 'from': MUST be your verified ZOHO email (for authentication)
       from: process.env.ZOHO_EMAIL_USER, 
       
       // 2. 'replyTo': Set the customer's email here so you can reply directly to them
-      replyTo: `${firstName} ${lastName} <${email}>`, // e.g., "John Doe <john.doe@example.com>"
+      replyTo: `${firstName} ${lastName} <${email}>`, 
       
       // 3. 'to': The email where you receive the quote
       to: process.env.RECEIVING_EMAIL, 
       
-      subject: `New Quote Request from ${firstName} ${lastName} (${businessName})`,
+      subject: `New Quote Request from ${firstName} ${lastName}`,
       
       text: `
         --- NEW QUOTE REQUEST ---
@@ -94,12 +87,9 @@ export async function POST(request: Request) {
 
     await transporter.sendMail(mailOptions);
 
-    // This section is what generates the email you see in your other screenshot!
     return NextResponse.json({ message: 'Quote successfully sent!' }, { status: 200 });
   } catch (error) {
-    // Catch-all for Nodemailer or general failure
-    console.error('NODEMAILER/SERVER FAILURE:', error);
-    // Return a generic error message, but the console log will show the exact reason on your host
+    console.error('Quote sending error:', error);
     return NextResponse.json({ message: 'Failed to send quote request. Please check server logs.' }, { status: 500 });
   }
 }

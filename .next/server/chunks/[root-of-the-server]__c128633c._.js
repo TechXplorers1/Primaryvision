@@ -185,49 +185,41 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$serv
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nodemailer$2f$lib$2f$nodemailer$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/nodemailer/lib/nodemailer.js [app-route] (ecmascript)");
 ;
 ;
-// Nodemailer transport configuration for Zoho Mail (Remains the same)
+// Nodemailer transport configuration for Zoho Mail
 const transporter = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$nodemailer$2f$lib$2f$nodemailer$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["default"].createTransport({
     host: 'smtp.zoho.com',
     port: 465,
     secure: true,
     auth: {
-        // These process.env variables MUST be set on your hosting platform!
         user: process.env.ZOHO_EMAIL_USER,
         pass: process.env.ZOHO_EMAIL_PASS
     }
 });
 async function POST(request) {
-    // Check 1: Mandatory Environment Variables Check (early exit for config errors)
+    // Check 1: Mandatory Environment Variables Check
     if (!process.env.ZOHO_EMAIL_USER || !process.env.ZOHO_EMAIL_PASS || !process.env.RECEIVING_EMAIL) {
-        console.error('SERVER ERROR: Email configuration missing for deployment. Check ZOHO_EMAIL_USER, ZOHO_EMAIL_PASS, and RECEIVING_EMAIL environment variables.');
+        console.error('SERVER ERROR: Email configuration missing (User, Pass, or Recipient).');
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            message: 'Server configuration error: Email service credentials missing.'
+            message: 'Server configuration error.'
         }, {
             status: 500
         });
     }
-    let data;
+    // Check 2: Verify Nodemailer connection to Zoho SMTP *before* processing form data
     try {
-        // Check 2: Safely parse the request body
-        data = await request.json();
-    } catch (parseError) {
-        console.error('REQUEST ERROR: Failed to parse request body as JSON:', parseError);
+        await transporter.verify();
+    } catch (authError) {
+        console.error('NODEMAILER AUTHENTICATION FAILED for Quote Request:', authError);
+        // Return a 500 error if authentication or connection fails
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-            message: 'Invalid request body format.'
+            message: 'Email service authentication failed. Check server logs.'
         }, {
-            status: 400
+            status: 500
         });
     }
     try {
+        const data = await request.json();
         const { firstName, lastName, businessName, email, phone, typeOfInquiry } = data;
-        // Check 3: Basic Data Validation (optional, but good practice)
-        if (!firstName || !email) {
-            return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
-                message: 'Missing required fields (Name or Email).'
-            }, {
-                status: 400
-            });
-        }
         const mailOptions = {
             // 1. 'from': MUST be your verified ZOHO email (for authentication)
             from: process.env.ZOHO_EMAIL_USER,
@@ -235,7 +227,7 @@ async function POST(request) {
             replyTo: `${firstName} ${lastName} <${email}>`,
             // 3. 'to': The email where you receive the quote
             to: process.env.RECEIVING_EMAIL,
-            subject: `New Quote Request from ${firstName} ${lastName} (${businessName})`,
+            subject: `New Quote Request from ${firstName} ${lastName}`,
             text: `
         --- NEW QUOTE REQUEST ---
         
@@ -265,16 +257,13 @@ async function POST(request) {
       `
         };
         await transporter.sendMail(mailOptions);
-        // This section is what generates the email you see in your other screenshot!
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: 'Quote successfully sent!'
         }, {
             status: 200
         });
     } catch (error) {
-        // Catch-all for Nodemailer or general failure
-        console.error('NODEMAILER/SERVER FAILURE:', error);
-        // Return a generic error message, but the console log will show the exact reason on your host
+        console.error('Quote sending error:', error);
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: 'Failed to send quote request. Please check server logs.'
         }, {

@@ -67,10 +67,19 @@ const parseForm = (request: Request) => {
 // --------------------------------------------------------------------------
 
 export async function POST(request: Request) {
-  // Check Environment Variables
-  if (!process.env.ZOHO_EMAIL_USER || !process.env.RECEIVING_EMAIL) {
+  // Check 1: Mandatory Environment Variables Check (early exit for config errors)
+  if (!process.env.ZOHO_EMAIL_USER || !process.env.ZOHO_EMAIL_PASS || !process.env.RECEIVING_EMAIL) {
     console.error('SERVER ERROR: Email credentials or recipient missing.');
     return NextResponse.json({ message: 'Server configuration error: Email credentials or recipient missing.' }, { status: 500 });
+  }
+
+  // Check 2: Verify Nodemailer connection to Zoho SMTP *before* processing form data
+  try {
+    await transporter.verify();
+  } catch (authError) {
+    console.error('NODEMAILER AUTHENTICATION FAILED:', authError);
+    // Return a 500 error if authentication or connection fails
+    return NextResponse.json({ message: 'Email service authentication failed. Check server logs.' }, { status: 500 });
   }
 
   let tempFilePath: string | undefined;
