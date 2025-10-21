@@ -17,21 +17,38 @@ const transporter = nodemailer.createTransport({
   port: 465,
   secure: true,
   auth: {
+    // These process.env variables MUST be set on your hosting platform!
     user: process.env.ZOHO_EMAIL_USER,    // Your verified Zoho email
     pass: process.env.ZOHO_EMAIL_PASS,    // The App Password
   },
 });
 
 export async function POST(request: Request) {
-  if (!process.env.ZOHO_EMAIL_USER || !process.env.RECEIVING_EMAIL) {
-    console.error('Email configuration missing. Check .env.local file.');
-    return NextResponse.json({ message: 'Server configuration error.' }, { status: 500 });
+  // Check 1: Mandatory Environment Variables Check (early exit for config errors)
+  if (!process.env.ZOHO_EMAIL_USER || !process.env.ZOHO_EMAIL_PASS || !process.env.RECEIVING_EMAIL) {
+    console.error('SERVER ERROR: Email configuration missing for deployment. Check ZOHO_EMAIL_USER, ZOHO_EMAIL_PASS, and RECEIVING_EMAIL environment variables.');
+    return NextResponse.json({ 
+      message: 'Server configuration error: Email service credentials missing.' 
+    }, { status: 500 });
+  }
+
+  let data: QuoteFormData;
+
+  try {
+    // Check 2: Safely parse the request body
+    data = await request.json();
+  } catch (parseError) {
+    console.error('REQUEST ERROR: Failed to parse request body as JSON:', parseError);
+    return NextResponse.json({ message: 'Invalid request body format.' }, { status: 400 });
   }
 
   try {
-    const data: QuoteFormData = await request.json();
-
     const { firstName, lastName, businessName, email, phone, typeOfInquiry } = data;
+
+    // Check 3: Basic Data Validation (optional, but good practice)
+    if (!firstName || !email) {
+      return NextResponse.json({ message: 'Missing required fields (Name or Email).' }, { status: 400 });
+    }
 
     const mailOptions = {
       // 1. 'from': MUST be your verified ZOHO email (for authentication)
@@ -43,9 +60,8 @@ export async function POST(request: Request) {
       // 3. 'to': The email where you receive the quote
       to: process.env.RECEIVING_EMAIL, 
       
-      subject: `New Quote Request from ${firstName} ${lastName}`,
+      subject: `New Quote Request from ${firstName} ${lastName} (${businessName})`,
       
-      // ... (Rest of the text and html content remains the same)
       text: `
         --- NEW QUOTE REQUEST ---
         
@@ -78,9 +94,12 @@ export async function POST(request: Request) {
 
     await transporter.sendMail(mailOptions);
 
+    // This section is what generates the email you see in your other screenshot!
     return NextResponse.json({ message: 'Quote successfully sent!' }, { status: 200 });
   } catch (error) {
-    console.error('Email sending error:', error);
+    // Catch-all for Nodemailer or general failure
+    console.error('NODEMAILER/SERVER FAILURE:', error);
+    // Return a generic error message, but the console log will show the exact reason on your host
     return NextResponse.json({ message: 'Failed to send quote request. Please check server logs.' }, { status: 500 });
   }
 }

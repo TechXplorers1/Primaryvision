@@ -1,10 +1,9 @@
-// app/api/apply-job/route.ts
 import { NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 import { IncomingForm, Fields, Files } from 'formidable'; 
 import { promises as fs } from 'fs';
 import path from 'path';
-import { Readable } from 'stream'; // Import Node.js stream for compatibility
+import { Readable } from 'stream'; // <-- Re-import Readable to create the Node Stream
 
 // Zoho Mail Transport Configuration 
 const transporter = nodemailer.createTransport({
@@ -13,13 +12,14 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: process.env.ZOHO_EMAIL_USER,
-    pass: process.env.ZOHO_EMAIL_PASS,
+    pass: process.env.ZOHO_EMAIL_PASS, // Ensure this is the Zoho App Password
   },
   connectionTimeout: 20000, 
   socketTimeout: 30000,
 });
 
 // CRITICAL: Next.js API configuration to disable built-in body parsing
+// This tells Next.js NOT to process the request body, leaving it raw for Formidable.
 export const config = {
   api: {
     bodyParser: false,
@@ -27,35 +27,38 @@ export const config = {
 };
 
 // --------------------------------------------------------------------------
-// 🔥 THE ROBUST FIX: Utility function to fully adapt the Web Request for Formidable
+// 🔥 FINAL FIX: Bridging Web Request to Node Stream for Formidable
 // --------------------------------------------------------------------------
-const parseForm = (req: Request) => {
+const parseForm = (request: Request) => {
     return new Promise<{ fields: Fields, files: Files }>(async (resolve, reject) => {
         
-        if (!req.body) {
-            return reject(new Error("Request body is empty."));
+        if (!request.body) {
+            console.error('Request body is undefined.');
+            return reject(new Error("Request body is empty, likely due to internal server error or client misconfiguration."));
         }
         
-        // 1. Create the Node.js Readable stream from the Web Request body
-        const nodeReadableStream = Readable.from(req.body as any);
+        // 1. Convert the Web Request body (ReadableStream) into a Node.js Readable stream.
+        // This is necessary to satisfy Formidable's Node.js stream dependency.
+        const nodeReadableStream = Readable.from(request.body as any);
 
         // 2. Create the Formidable parser instance
         const form = new IncomingForm({
-            maxFileSize: 5 * 1024 * 1024, 
+            maxFileSize: 5 * 1024 * 1024, // 5MB limit
             keepExtensions: true, 
         });
 
-        // 3. Attach the necessary headers and method to the stream object itself.
-        // Formidable needs these properties (like 'content-type') to start parsing.
-        const headers = Object.fromEntries(req.headers);
+        // 3. CRITICAL: Manually attach headers and method to the stream object.
+        // Formidable requires these properties (typically found on Node's IncomingMessage) 
+        // to correctly determine content type and parse the multi-part form data.
+        const headers = Object.fromEntries(request.headers.entries());
         (nodeReadableStream as any).headers = headers;
-        (nodeReadableStream as any).method = req.method;
+        (nodeReadableStream as any).method = request.method;
 
-        // 4. Call form.parse() with only ONE stream argument, plus the callback.
+        // 4. Parse the adapted stream
         form.parse(nodeReadableStream as any, (err: Error | null, fields: Fields, files: Files) => {
             if (err) {
                 console.error('Formidable Error:', err);
-                return reject(new Error('File upload failed or exceeded size limit.'));
+                return reject(new Error('File upload failed (size limit or parsing error).')); 
             }
             resolve({ fields, files });
         });
@@ -64,7 +67,9 @@ const parseForm = (req: Request) => {
 // --------------------------------------------------------------------------
 
 export async function POST(request: Request) {
+  // Check Environment Variables
   if (!process.env.ZOHO_EMAIL_USER || !process.env.RECEIVING_EMAIL) {
+    console.error('SERVER ERROR: Email credentials or recipient missing.');
     return NextResponse.json({ message: 'Server configuration error: Email credentials or recipient missing.' }, { status: 500 });
   }
 
@@ -77,7 +82,8 @@ export async function POST(request: Request) {
     const fullName = fields.fullName?.[0];
     const email = fields.email?.[0];
     const phone = fields.phone?.[0];
-    const resumeFile = files.resume?.[0];
+    // Check if the file was actually uploaded
+    const resumeFile = files.resume?.[0]; 
 
     if (!resumeFile || !fullName || !email) {
         return NextResponse.json({ message: 'Missing required form fields or resume file.' }, { status: 400 });
@@ -112,16 +118,27 @@ export async function POST(request: Request) {
 
     // Clean up the temporary file
     if (tempFilePath) {
-        await fs.unlink(tempFilePath).catch(e => console.error("Could not delete temp file:", e));
+        // Use an inner try/catch for safety, preventing failure after success
+        try {
+            await fs.unlink(tempFilePath);
+        } catch (e) {
+            console.error("Could not delete temp file (non-critical):", e);
+        }
     }
 
     return NextResponse.json({ message: 'Application successfully sent!' }, { status: 200 });
   } catch (error) {
+    // Clean up the temporary file on error
     if (tempFilePath) {
-        await fs.unlink(tempFilePath).catch(e => console.error("Could not delete temp file on error:", e));
+        try {
+             await fs.unlink(tempFilePath);
+        } catch (e) {
+            console.error("Could not delete temp file on error (non-critical):", e);
+        }
     }
     
     console.error('Application submission error:', error);
+    // Returning the specific error message caught earlier in the process
     return NextResponse.json({ message: 'Failed to submit application. Check server logs.' }, { status: 500 });
   }
 }

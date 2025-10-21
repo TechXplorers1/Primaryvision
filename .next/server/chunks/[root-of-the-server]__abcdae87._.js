@@ -250,7 +250,6 @@ module.exports = mod;
 
 var { g: global, __dirname } = __turbopack_context__;
 {
-// app/api/apply-job/route.ts
 __turbopack_context__.s({
     "POST": (()=>POST),
     "config": (()=>config)
@@ -261,7 +260,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formidable$2
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formidable$2f$src$2f$Formidable$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__default__as__IncomingForm$3e$__ = __turbopack_context__.i("[project]/node_modules/formidable/src/Formidable.js [app-route] (ecmascript) <export default as IncomingForm>");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/fs [external] (fs, cjs)");
 var __TURBOPACK__imported__module__$5b$externals$5d2f$path__$5b$external$5d$__$28$path$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/path [external] (path, cjs)");
-var __TURBOPACK__imported__module__$5b$externals$5d2f$stream__$5b$external$5d$__$28$stream$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/stream [external] (stream, cjs)"); // Import Node.js stream for compatibility
+var __TURBOPACK__imported__module__$5b$externals$5d2f$stream__$5b$external$5d$__$28$stream$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/stream [external] (stream, cjs)"); // <-- Re-import Readable to create the Node Stream
 ;
 ;
 ;
@@ -286,30 +285,33 @@ const config = {
     }
 };
 // --------------------------------------------------------------------------
-// 🔥 THE ROBUST FIX: Utility function to fully adapt the Web Request for Formidable
+// 🔥 FINAL FIX: Bridging Web Request to Node Stream for Formidable
 // --------------------------------------------------------------------------
-const parseForm = (req)=>{
+const parseForm = (request)=>{
     return new Promise(async (resolve, reject)=>{
-        if (!req.body) {
-            return reject(new Error("Request body is empty."));
+        if (!request.body) {
+            console.error('Request body is undefined.');
+            return reject(new Error("Request body is empty, likely due to internal server error or client misconfiguration."));
         }
-        // 1. Create the Node.js Readable stream from the Web Request body
-        const nodeReadableStream = __TURBOPACK__imported__module__$5b$externals$5d2f$stream__$5b$external$5d$__$28$stream$2c$__cjs$29$__["Readable"].from(req.body);
+        // 1. Convert the Web Request body (ReadableStream) into a Node.js Readable stream.
+        // This is necessary to satisfy Formidable's Node.js stream dependency.
+        const nodeReadableStream = __TURBOPACK__imported__module__$5b$externals$5d2f$stream__$5b$external$5d$__$28$stream$2c$__cjs$29$__["Readable"].from(request.body);
         // 2. Create the Formidable parser instance
         const form = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$formidable$2f$src$2f$Formidable$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__$3c$export__default__as__IncomingForm$3e$__["IncomingForm"]({
             maxFileSize: 5 * 1024 * 1024,
             keepExtensions: true
         });
-        // 3. Attach the necessary headers and method to the stream object itself.
-        // Formidable needs these properties (like 'content-type') to start parsing.
-        const headers = Object.fromEntries(req.headers);
+        // 3. CRITICAL: Manually attach headers and method to the stream object.
+        // Formidable requires these properties (typically found on Node's IncomingMessage) 
+        // to correctly determine content type and parse the multi-part form data.
+        const headers = Object.fromEntries(request.headers.entries());
         nodeReadableStream.headers = headers;
-        nodeReadableStream.method = req.method;
-        // 4. Call form.parse() with only ONE stream argument, plus the callback.
+        nodeReadableStream.method = request.method;
+        // 4. Parse the adapted stream
         form.parse(nodeReadableStream, (err, fields, files)=>{
             if (err) {
                 console.error('Formidable Error:', err);
-                return reject(new Error('File upload failed or exceeded size limit.'));
+                return reject(new Error('File upload failed (size limit or parsing error).'));
             }
             resolve({
                 fields,
@@ -319,7 +321,9 @@ const parseForm = (req)=>{
     });
 };
 async function POST(request) {
+    // Check Environment Variables
     if (!process.env.ZOHO_EMAIL_USER || !process.env.RECEIVING_EMAIL) {
+        console.error('SERVER ERROR: Email credentials or recipient missing.');
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: 'Server configuration error: Email credentials or recipient missing.'
         }, {
@@ -333,6 +337,7 @@ async function POST(request) {
         const fullName = fields.fullName?.[0];
         const email = fields.email?.[0];
         const phone = fields.phone?.[0];
+        // Check if the file was actually uploaded
         const resumeFile = files.resume?.[0];
         if (!resumeFile || !fullName || !email) {
             return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
@@ -368,7 +373,12 @@ async function POST(request) {
         });
         // Clean up the temporary file
         if (tempFilePath) {
-            await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].unlink(tempFilePath).catch((e)=>console.error("Could not delete temp file:", e));
+            // Use an inner try/catch for safety, preventing failure after success
+            try {
+                await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].unlink(tempFilePath);
+            } catch (e) {
+                console.error("Could not delete temp file (non-critical):", e);
+            }
         }
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: 'Application successfully sent!'
@@ -376,10 +386,16 @@ async function POST(request) {
             status: 200
         });
     } catch (error) {
+        // Clean up the temporary file on error
         if (tempFilePath) {
-            await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].unlink(tempFilePath).catch((e)=>console.error("Could not delete temp file on error:", e));
+            try {
+                await __TURBOPACK__imported__module__$5b$externals$5d2f$fs__$5b$external$5d$__$28$fs$2c$__cjs$29$__["promises"].unlink(tempFilePath);
+            } catch (e) {
+                console.error("Could not delete temp file on error (non-critical):", e);
+            }
         }
         console.error('Application submission error:', error);
+        // Returning the specific error message caught earlier in the process
         return __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$server$2e$js__$5b$app$2d$route$5d$__$28$ecmascript$29$__["NextResponse"].json({
             message: 'Failed to submit application. Check server logs.'
         }, {

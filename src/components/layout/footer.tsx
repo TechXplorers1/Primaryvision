@@ -1,3 +1,4 @@
+import Link from 'next/link'; // <--- CRITICAL: Import Link component
 import { Phone, Mail, Twitter, Linkedin, Facebook } from 'lucide-react';
 import React from 'react';
 
@@ -12,7 +13,7 @@ const services = [
     { href: '/qa-testing', label: 'QA & Testing' },
     { href: '/data-analytics', label: 'Data Analytics' },
     { href: '/ux-ui-design', label: 'UX/UI Design' },
-    { href: '/sas-services', label: 'SAS Services' },
+    { href: '/sas-services', 'label': 'SAS Services' },
 ];
   
   const quickLinks = [
@@ -34,13 +35,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((link) => (
                 <li key={link.label}>
-                  {/* Using standard <a> tag for internal navigation */}
-                  <a 
+                  {/* Using Next.js Link for internal client-side navigation */}
+                  <Link 
                     href={link.href} 
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -51,13 +52,13 @@ export default function Footer() {
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  {/* Using standard <a> tag for internal navigation */}
-                  <a 
+                  {/* Using Next.js Link for internal client-side navigation */}
+                  <Link 
                     href={link.href} 
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -72,7 +73,7 @@ export default function Footer() {
                 </li>
                 <li className="flex items-center gap-3">
                     <Mail className="h-5 w-5 text-primary"/>
-                    {/* Standard <a> for mailto link */}
+                    {/* Standard <a> for mailto link (external action) */}
                     <a href="mailto:info@primaryvision.com" className="text-muted-foreground hover:text-primary transition-colors">
                         info@primaryvision.com
                     </a>
@@ -130,12 +131,14 @@ export default function Footer() {
                     &copy; {new Date().getFullYear()} Primary Vision. All rights reserved.
                 </p>
                 <div className="flex items-center gap-4">
-                    <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                    {/* Internal link: Privacy Policy (Link component) */}
+                    <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     Privacy Policy
-                    </a>
-                    <a href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
+                    </Link>
+                    {/* Internal link: Terms of Service (Link component) */}
+                    <Link href="#" className="text-sm text-muted-foreground transition-colors hover:text-primary">
                     Terms of Service
-                    </a>
+                    </Link>
                 </div>
             </div>
         </div>
