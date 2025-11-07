@@ -25,7 +25,7 @@ const formSchema = z.object({
   businessName: z.string().min(2, 'Business name must be at least 2 characters.'),
   email: z.string().email('Please enter a valid email address.'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits.'),
-  typeOfInquiry: z.string().min(30, 'Please specify the type of inquiry.'),
+  typeOfInquiry: z.string().min(5, 'Please specify the type of inquiry.'),
 });
 
 type FormValues = z.infer<typeof formSchema>;
